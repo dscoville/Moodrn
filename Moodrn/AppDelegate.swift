@@ -17,10 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
         Parse.setApplicationId("jhfxDUb6bVv70p0I22v5GBG3py7Xoxvxucf6NKzW", clientKey: "yzChRhrKqEkQ9NTsPYvJqx7C02PgDMP3yWNvCSj1")
+        
+        // Override point for customization after application launch.
+        return true
+            
+            //FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        
     }
     
     func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool
