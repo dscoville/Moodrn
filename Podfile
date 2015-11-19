@@ -5,4 +5,5 @@
 use_frameworks!
 
 pod 'Parse'
+pod 'ParseFacebookUtilsV4'
 
