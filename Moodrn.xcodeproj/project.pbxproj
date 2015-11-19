@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0B0B3329A3FD064A3D5D2B86 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CD98A176FAFAECD087F4BE3 /* Pods.framework */; };
+		1458FB831BFD4F66008DF1AE /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1458FB821BFD4F66008DF1AE /* TimelineViewController.swift */; };
+		14F6381F1BFD63FD00918702 /* MoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F6381E1BFD63FD00918702 /* MoodTableViewCell.swift */; };
 		9178C6C41BFAE96D00F049F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9178C6C31BFAE96D00F049F8 /* AppDelegate.swift */; };
 		9178C6C61BFAE96D00F049F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9178C6C51BFAE96D00F049F8 /* ViewController.swift */; };
 		9178C6C91BFAE96D00F049F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9178C6C71BFAE96D00F049F8 /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		0C6D2AA2C361F8BD0DB28DC0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		0CD98A176FAFAECD087F4BE3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1458FB821BFD4F66008DF1AE /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
+		14F6381E1BFD63FD00918702 /* MoodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodTableViewCell.swift; sourceTree = "<group>"; };
 		210438B01C0537943A7356D1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9178C6C01BFAE96D00F049F8 /* Moodrn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moodrn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9178C6C31BFAE96D00F049F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 		9178C6B71BFAE96D00F049F8 = {
 			isa = PBXGroup;
 			children = (
+				14F6381E1BFD63FD00918702 /* MoodTableViewCell.swift */,
 				9178C6F91BFAEE5800F049F8 /* FBSDKCoreKit.framework */,
 				9178C6FA1BFAEE5800F049F8 /* FBSDKLoginKit.framework */,
 				9178C6C21BFAE96D00F049F8 /* Moodrn */,
@@ -132,6 +137,7 @@
 				9178C6C31BFAE96D00F049F8 /* AppDelegate.swift */,
 				9178C6C51BFAE96D00F049F8 /* ViewController.swift */,
 				9178C6C71BFAE96D00F049F8 /* Main.storyboard */,
+				1458FB821BFD4F66008DF1AE /* TimelineViewController.swift */,
 				9178C6CA1BFAE96D00F049F8 /* Assets.xcassets */,
 				9178C6CC1BFAE96D00F049F8 /* LaunchScreen.storyboard */,
 				9178C6CF1BFAE96D00F049F8 /* Info.plist */,
@@ -228,7 +234,7 @@
 				TargetAttributes = {
 					9178C6BF1BFAE96D00F049F8 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = V24XTJQVAW;
+						DevelopmentTeam = K56RB6354Y;
 					};
 					9178C6D31BFAE96D00F049F8 = {
 						CreatedOnToolsVersion = 7.1;
@@ -342,8 +348,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14F6381F1BFD63FD00918702 /* MoodTableViewCell.swift in Sources */,
 				9178C6C61BFAE96D00F049F8 /* ViewController.swift in Sources */,
 				9178C6C41BFAE96D00F049F8 /* AppDelegate.swift in Sources */,
+				1458FB831BFD4F66008DF1AE /* TimelineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +492,8 @@
 			baseConfigurationReference = 210438B01C0537943A7356D1 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -492,6 +502,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = davidscompany.Moodrn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -500,6 +511,8 @@
 			baseConfigurationReference = 0C6D2AA2C361F8BD0DB28DC0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -508,6 +521,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = davidscompany.Moodrn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
