@@ -17,6 +17,7 @@
 		9178C6E41BFAE96D00F049F8 /* MoodrnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9178C6E31BFAE96D00F049F8 /* MoodrnUITests.swift */; };
 		9178C6FB1BFAEE5800F049F8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9178C6F91BFAEE5800F049F8 /* FBSDKCoreKit.framework */; };
 		9178C6FC1BFAEE5800F049F8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9178C6FA1BFAEE5800F049F8 /* FBSDKLoginKit.framework */; };
+		C82CC7D61BFE76780059389A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82CC7D51BFE76780059389A /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		9178C6E51BFAE96D00F049F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9178C6F91BFAEE5800F049F8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		9178C6FA1BFAEE5800F049F8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		C82CC7D51BFE76780059389A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				9178C6C31BFAE96D00F049F8 /* AppDelegate.swift */,
 				9178C6C51BFAE96D00F049F8 /* ViewController.swift */,
 				9178C6C71BFAE96D00F049F8 /* Main.storyboard */,
+				C82CC7D51BFE76780059389A /* LoginViewController.swift */,
 				9178C6CA1BFAE96D00F049F8 /* Assets.xcassets */,
 				9178C6CC1BFAE96D00F049F8 /* LaunchScreen.storyboard */,
 				9178C6CF1BFAE96D00F049F8 /* Info.plist */,
@@ -342,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C82CC7D61BFE76780059389A /* LoginViewController.swift in Sources */,
 				9178C6C61BFAE96D00F049F8 /* ViewController.swift in Sources */,
 				9178C6C41BFAE96D00F049F8 /* AppDelegate.swift in Sources */,
 			);
