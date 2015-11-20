@@ -13,25 +13,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eP3-gn-Wm7">
-                                <rect key="frame" x="91" y="269" width="138" height="30"/>
+                            <view contentMode="scaleToFill" id="3BJ-gB-g3p" userLabel="emoji wallpaper">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Login with facebook"/>
-                                <connections>
-                                    <action selector="didTapLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k0D-kP-gJs"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="emojiWallpaper" id="Xs0-wi-k6D">
+                                        <rect key="frame" x="-17" y="0.0" width="353" height="664"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mood rn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OpP-7B-Nu9">
+                                        <rect key="frame" x="73" y="202" width="173" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="43"/>
+                                        <color key="textColor" red="0.37647058820000001" green="0.0" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eP3-gn-Wm7">
+                                        <rect key="frame" x="91" y="343" width="138" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Login with facebook"/>
+                                        <connections>
+                                            <action selector="didTapLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k0D-kP-gJs"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" id="Y74-YW-0PG">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="586"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="gradientView" destination="Y74-YW-0PG" id="Qhq-we-oRw"/>
                         <segue destination="fdD-ML-paP" kind="modal" identifier="showNew" id="D4o-bq-R4d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="162.66666666666666" y="368.72666666666669"/>
+            <point key="canvasLocation" x="162" y="368"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="EZp-X0-wvA">
@@ -59,4 +82,7 @@
             <point key="canvasLocation" x="553" y="368"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="emojiWallpaper" width="353" height="664"/>
+    </resources>
 </document>
