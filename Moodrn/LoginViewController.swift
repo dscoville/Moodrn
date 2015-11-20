@@ -14,14 +14,12 @@ import ParseFacebookUtilsV4
 //import GradientView
 
 class LoginViewController: UIViewController {
-
-    @IBOutlet weak var gradientView: GradientView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Initialize a gradient view
-        // let gradientView = GradientView(frame: CGRectMake(20, 20, 280, 280))
+        let gradientView = GradientView(frame: CGRectMake(20, 20, 280, 280))
         
         // Set the gradient colors
         gradientView.colors  = [UIColor.greenColor(), UIColor.yellowColor()]
