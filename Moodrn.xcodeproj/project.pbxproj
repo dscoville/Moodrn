@@ -18,6 +18,13 @@
 		9178C6FB1BFAEE5800F049F8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9178C6F91BFAEE5800F049F8 /* FBSDKCoreKit.framework */; };
 		9178C6FC1BFAEE5800F049F8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9178C6FA1BFAEE5800F049F8 /* FBSDKLoginKit.framework */; };
 		C82CC7D41BFD509B0059389A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82CC7D31BFD509B0059389A /* LoginViewController.swift */; };
+		C88EBDAD1C0297B500F7D8B3 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88EBDAC1C0297B500F7D8B3 /* MessageViewController.swift */; };
+		C88EBDAE1C0298EE00F7D8B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82CC7D31BFD509B0059389A /* LoginViewController.swift */; };
+		C88EBDAF1C0298F700F7D8B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82CC7D31BFD509B0059389A /* LoginViewController.swift */; };
+		C88EBDB01C02990700F7D8B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9178C6C31BFAE96D00F049F8 /* AppDelegate.swift */; };
+		C88EBDB11C02990800F7D8B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9178C6C31BFAE96D00F049F8 /* AppDelegate.swift */; };
+		C88EBDB21C02990A00F7D8B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9178C6C51BFAE96D00F049F8 /* ViewController.swift */; };
+		C88EBDB31C02990B00F7D8B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9178C6C51BFAE96D00F049F8 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +64,7 @@
 		9178C6F91BFAEE5800F049F8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		9178C6FA1BFAEE5800F049F8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		C82CC7D31BFD509B0059389A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C88EBDAC1C0297B500F7D8B3 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +146,7 @@
 				9178C6CA1BFAE96D00F049F8 /* Assets.xcassets */,
 				9178C6CC1BFAE96D00F049F8 /* LaunchScreen.storyboard */,
 				9178C6CF1BFAE96D00F049F8 /* Info.plist */,
+				C88EBDAC1C0297B500F7D8B3 /* MessageViewController.swift */,
 			);
 			path = Moodrn;
 			sourceTree = "<group>";
@@ -347,6 +356,7 @@
 			files = (
 				C82CC7D41BFD509B0059389A /* LoginViewController.swift in Sources */,
 				9178C6C61BFAE96D00F049F8 /* ViewController.swift in Sources */,
+				C88EBDAD1C0297B500F7D8B3 /* MessageViewController.swift in Sources */,
 				9178C6C41BFAE96D00F049F8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,6 +365,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C88EBDB11C02990800F7D8B3 /* AppDelegate.swift in Sources */,
+				C88EBDAE1C0298EE00F7D8B3 /* LoginViewController.swift in Sources */,
+				C88EBDB21C02990A00F7D8B3 /* ViewController.swift in Sources */,
 				9178C6D91BFAE96D00F049F8 /* MoodrnTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +376,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C88EBDB01C02990700F7D8B3 /* AppDelegate.swift in Sources */,
+				C88EBDAF1C0298F700F7D8B3 /* LoginViewController.swift in Sources */,
+				C88EBDB31C02990B00F7D8B3 /* ViewController.swift in Sources */,
 				9178C6E41BFAE96D00F049F8 /* MoodrnUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

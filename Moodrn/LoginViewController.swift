@@ -28,10 +28,19 @@ class LoginViewController: UIViewController {
             if let user = user {
                 if user.isNew {
                     print("User signed up and logged in through Facebook!")
+                    self.performSegueWithIdentifier("loginSegue", sender: self)
                     
                 } else {
                     print("User logged in through Facebook!")
                     
+                    //trying just using segues
+                    self.performSegueWithIdentifier("loginSegue", sender: self)
+                    
+                    //let protectedPage = self.storyboard?.instantiateViewControllerWithIdentifier("MessageViewController") as! MessageViewController
+                    
+                    //let protectedPageNav = UINavigationController(rootViewController: protectedPage)
+                    
+                    //appDelegate.window?.rootViewController = protectedPageNav
                 }
             } else {
                 print("Uh oh. The user cancelled the Facebook login.")
