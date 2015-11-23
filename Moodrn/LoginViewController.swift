@@ -11,32 +11,11 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import Parse
 import ParseFacebookUtilsV4
-//import GradientView
 
 class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Initialize a gradient view
-        let gradientView = GradientView(frame: CGRectMake(20, 20, 280, 280))
-        
-        // Set the gradient colors
-        gradientView.colors  = [UIColor.greenColor(), UIColor.yellowColor()]
-        
-        // Optionally set some locations
-        gradientView.locations = [0.8, 1.0]
-        
-        // Optionally change the direction. The default is vertical.
-        gradientView.direction = .Horizontal
-        //gradientView.type = .Radial
-        
-        // Add some borders too if you want
-        gradientView.topBorderColor = UIColor.redColor()
-        gradientView.bottomBorderColor = UIColor.blueColor()
-        
-        // Add it as a subview in all of its awesome
-        view.addSubview(gradientView)
         
         }
     

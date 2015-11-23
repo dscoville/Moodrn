@@ -18,8 +18,6 @@
 		9178C6FB1BFAEE5800F049F8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9178C6F91BFAEE5800F049F8 /* FBSDKCoreKit.framework */; };
 		9178C6FC1BFAEE5800F049F8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9178C6FA1BFAEE5800F049F8 /* FBSDKLoginKit.framework */; };
 		C82CC7D41BFD509B0059389A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82CC7D31BFD509B0059389A /* LoginViewController.swift */; };
-		C88A80DE1BFEC08200F3CDD9 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88A80DC1BFEC08200F3CDD9 /* GradientView.swift */; };
-		C88A80DF1BFEC08200F3CDD9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C88A80DD1BFEC08200F3CDD9 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,9 +57,6 @@
 		9178C6F91BFAEE5800F049F8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		9178C6FA1BFAEE5800F049F8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		C82CC7D31BFD509B0059389A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		C88A80DB1BFEC08200F3CDD9 /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
-		C88A80DC1BFEC08200F3CDD9 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		C88A80DD1BFEC08200F3CDD9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +110,6 @@
 				9178C6F91BFAEE5800F049F8 /* FBSDKCoreKit.framework */,
 				9178C6FA1BFAEE5800F049F8 /* FBSDKLoginKit.framework */,
 				9178C6C21BFAE96D00F049F8 /* Moodrn */,
-				C88A80DA1BFEC08200F3CDD9 /* GradientView */,
 				9178C6D71BFAE96D00F049F8 /* MoodrnTests */,
 				9178C6E21BFAE96D00F049F8 /* MoodrnUITests */,
 				9178C6C11BFAE96D00F049F8 /* Products */,
@@ -164,17 +158,6 @@
 				9178C6E51BFAE96D00F049F8 /* Info.plist */,
 			);
 			path = MoodrnUITests;
-			sourceTree = "<group>";
-		};
-		C88A80DA1BFEC08200F3CDD9 /* GradientView */ = {
-			isa = PBXGroup;
-			children = (
-				C88A80DB1BFEC08200F3CDD9 /* GradientView.h */,
-				C88A80DC1BFEC08200F3CDD9 /* GradientView.swift */,
-				C88A80DD1BFEC08200F3CDD9 /* Info.plist */,
-			);
-			name = GradientView;
-			path = Moodrn/GradientView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,7 +270,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C88A80DF1BFEC08200F3CDD9 /* Info.plist in Resources */,
 				9178C6CE1BFAE96D00F049F8 /* LaunchScreen.storyboard in Resources */,
 				9178C6CB1BFAE96D00F049F8 /* Assets.xcassets in Resources */,
 				9178C6C91BFAE96D00F049F8 /* Main.storyboard in Resources */,
@@ -365,7 +347,6 @@
 			files = (
 				C82CC7D41BFD509B0059389A /* LoginViewController.swift in Sources */,
 				9178C6C61BFAE96D00F049F8 /* ViewController.swift in Sources */,
-				C88A80DE1BFEC08200F3CDD9 /* GradientView.swift in Sources */,
 				9178C6C41BFAE96D00F049F8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
