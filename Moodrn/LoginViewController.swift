@@ -31,6 +31,7 @@ class LoginViewController: UIViewController {
                     
                 } else {
                     print("User logged in through Facebook!")
+                    
                 }
             } else {
                 print("Uh oh. The user cancelled the Facebook login.")
