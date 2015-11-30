@@ -11,32 +11,11 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import Parse
 import ParseFacebookUtilsV4
-//import GradientView
 
 class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Initialize a gradient view
-        let gradientView = GradientView(frame: CGRectMake(20, 20, 280, 280))
-        
-        // Set the gradient colors
-        gradientView.colors  = [UIColor.greenColor(), UIColor.yellowColor()]
-        
-        // Optionally set some locations
-        gradientView.locations = [0.8, 1.0]
-        
-        // Optionally change the direction. The default is vertical.
-        gradientView.direction = .Horizontal
-        //gradientView.type = .Radial
-        
-        // Add some borders too if you want
-        gradientView.topBorderColor = UIColor.redColor()
-        gradientView.bottomBorderColor = UIColor.blueColor()
-        
-        // Add it as a subview in all of its awesome
-        view.addSubview(gradientView)
         
         }
     
@@ -49,9 +28,19 @@ class LoginViewController: UIViewController {
             if let user = user {
                 if user.isNew {
                     print("User signed up and logged in through Facebook!")
+                    self.performSegueWithIdentifier("loginSegue", sender: self)
                     
                 } else {
                     print("User logged in through Facebook!")
+                    
+                    //trying just using segues
+                    self.performSegueWithIdentifier("loginSegue", sender: self)
+                    
+                    //let protectedPage = self.storyboard?.instantiateViewControllerWithIdentifier("MessageViewController") as! MessageViewController
+                    
+                    //let protectedPageNav = UINavigationController(rootViewController: protectedPage)
+                    
+                    //appDelegate.window?.rootViewController = protectedPageNav
                 }
             } else {
                 print("Uh oh. The user cancelled the Facebook login.")
