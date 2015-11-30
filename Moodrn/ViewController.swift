@@ -27,6 +27,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         messages = []
         
         reloadMessages()
+        reloadMessages()
         
 //        if (FBSDKAccessToken.currentAccessToken() == nil) {
 //            print("Not Logged In")
@@ -71,8 +72,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         var cell = tableView.dequeueReusableCellWithIdentifier("MessageCell") as! MessageCell
         
         let message = messages[indexPath.row]
+        print("hello")
         cell.messageLabel.text = message["text"] as? String
-        
+        print(message["text"])
         return cell
     }
     
@@ -92,6 +94,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let query = PFQuery(className: "Message")
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
             self.messages = objects
+            
+            //print(self.messages)
             self.tableView.reloadData()
         }
     }
