@@ -6,3 +6,5 @@ use_frameworks!
 
 pod 'Parse'
 
+pod 'HPLTagCloudGenerator', '~> 0.0.3'
+

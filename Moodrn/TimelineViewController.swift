@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HPLTagCloudGenerator
 
 class TimelineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -16,6 +17,8 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // I want a whole bunch of strings
     var dates: [String]!
+    var emojis: [String]!
+    var periods: [String]!
     
     
     
@@ -29,9 +32,77 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.dataSource = self
         
         
-        // dates array
+        // arrays
         dates = ["Sat", "Fri", "Thu", "Wed", "Tue", "Mon", "Sun"]
         print(dates[0])
+
+        emojis = ["☺️👍🏼💕💤", "🍲💁🏻💅🎵🌟🎉🍹🌆", "💩😢💔", "👌🏼🌸🍃🍀", "😴😴😴", "☔️", "🍎🏃🏻🚲"]
+        print(emojis[0])
+        
+        periods = ["This Week", "Last Week", "Nov 1-7", "Oct 25-31"]
+        print(periods[0])
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
+            var tagDict = ["👍🏼": 3,
+                           "🍲": 5,
+                           "🍹": 7,
+                           "🍎": 9,
+                           "🎵": 11,
+                           "🚲": 13,
+                           "☺️": 15,
+                           "💕": 17,
+                           "🌟": 19,
+                           "👌🏼": 21,
+                           "☔️": 23,
+                           "😴": 25,
+                           "🎉": 25,
+                           "💤": 25,
+                           "🏃🏻": 25,
+                           "😁": 27,
+                           "😐": 27,
+                           "😎": 27,
+                           "🌺": 27,
+                           "💩": 100]
+            
+            var tagGenerator = HPLTagCloudGenerator()
+            tagGenerator.size = self.cloudView.frame.size
+            tagGenerator.tagDict = tagDict
+            
+            var views = tagGenerator.generateTagViews() as! [UILabel]
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                for tagView in views {
+                    self.cloudView.addSubview(tagView)
+                    tagView.textColor = UIColor.blueColor()
+                }
+            })
+        }
+//        dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//            // This runs in a background thread
+//            
+//            // dictionary of tags
+//            NSDictionary *tagDict = @{@"tag1": @3,
+//                @"tag2": @5,
+//                @"tag3": @7,
+//                @"tag4": @2};
+//            
+//            
+//            HPLTagCloudGenerator *tagGenerator = [[HPLTagCloudGenerator alloc] init];
+//            tagGenerator.size = CGSizeMake(self.tagView.frame.size.width, self.tagView.frame.size.height);
+//            tagGenerator.tagDict = tagDict;
+//            
+//            NSArray *views = [tagGenerator generateTagViews];
+//            
+//            dispatch_async( dispatch_get_main_queue(), ^{
+//            // This runs in the UI Thread
+//            
+//            for(UIView *v in views) {
+//            // Add tags to the view we created it for
+//            [self.tagView addSubview:v];
+//            }
+//            
+//            });
+//            });
     
     }
 
@@ -43,7 +114,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 
    // Tell table view how many rows in each section
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dates.count
+        return emojis.count
 //        return 4
         //write if statements to sort data in the sections appropriately if section is 9 , return 9 etc when I have parse data
     }
@@ -56,10 +127,12 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         
         //index path is which one we're on now
         var date = dates[indexPath.row]
+        var emoji = emojis[indexPath.row]
+        
         
         cell.dateLabel.text = date
         
-        cell.emojiLabel.text = "☺️ 👍🏼 💕"
+        cell.emojiLabel.text = emoji
         
         return cell
     }
@@ -78,7 +151,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         return 4
     }
     
-    // http://uicolor.io/#/hex-to-ui
+    // Create section headers; find colors at http://uicolor.io/#/hex-to-ui
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let sectionView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 24))
@@ -86,8 +159,9 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         sectionView.backgroundColor = UIColor(red:0.97, green:0.97, blue:0.97, alpha:1.0)
         
         let label = UILabel(frame: CGRect(x: 16, y: 3, width: sectionView.frame.size.width - 32, height: 18))
-
-        label.text = "This Week"
+        
+        var period = periods[section]
+        label.text = period
         label.font = UIFont.boldSystemFontOfSize(12)
         
         let dividerView = UIView(frame: CGRect(x: 0, y: 24, width: tableView.frame.size.width, height: 0.5))
