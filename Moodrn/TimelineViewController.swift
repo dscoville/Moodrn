@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 import HPLTagCloudGenerator
 
 class TimelineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -22,7 +23,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // Using API
     var dates: [NSDictionary]!
-    var emojis: [NSDictionary]!
+    var emojis: [PFObject]!
     var periods: [String]!
     
     
@@ -35,7 +36,6 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         emojis = []
         dates = []
         
-        // tableView.frame.size.height + cloudView.frame.size.height - 64
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -147,7 +147,6 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
    // Tell table view how many rows in each section
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return emojis.count
-//        return 4
         //write if statements to sort data in the sections appropriately if section is 9 , return 9 etc when I have parse data
     }
     
@@ -159,7 +158,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         
         //index path is which one we're on now
         var date = dates[indexPath.row]
-        var emoji = emojis[indexPath.row]
+        let emoji = emojis[indexPath.row]
         
         
         cell.dateLabel.text = date["synopsis"] as? String
