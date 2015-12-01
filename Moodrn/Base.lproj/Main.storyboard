@@ -17,8 +17,76 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="emojiWallpaper" id="Xs0-wi-k6D">
-                                        <rect key="frame" x="11" y="8" width="353" height="664"/>
+                                    <view contentMode="scaleToFill" id="Jnk-0G-eUf">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1334"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" id="LQX-St-xp2">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1334"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="far" id="JEn-3M-pTH">
+                                                        <rect key="frame" x="10" y="738" width="350" height="576"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </imageView>
+                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="far" id="msm-NY-rEx">
+                                                        <rect key="frame" x="10" y="71" width="350" height="576"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </view>
+                                            <view contentMode="scaleToFill" id="yUY-qv-gie">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1334"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="mid" id="w6r-I0-gMV">
+                                                        <rect key="frame" x="10" y="5" width="236" height="529"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </imageView>
+                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="mid" id="2Z7-I5-5ds">
+                                                        <rect key="frame" x="10" y="672" width="236" height="529"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </view>
+                                            <view contentMode="scaleToFill" id="B8L-Uk-COC">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1334"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="close" id="FgP-gb-4a1">
+                                                        <rect key="frame" x="15" y="15" width="344" height="651"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </imageView>
+                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="close" id="9Rc-wb-HVP">
+                                                        <rect key="frame" x="15" y="682" width="344" height="651"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </imageView>
+                                                </subviews>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view alpha="0.0" contentMode="scaleToFill" id="C0v-AF-PU5">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1334"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="center" image="emojiWallpaper" id="Xs0-wi-k6D">
+                                                <rect key="frame" x="0.0" y="0.0" width="353" height="664"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </imageView>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="center" image="emojiWallpaper" id="pYe-BB-wBj">
+                                                <rect key="frame" x="0.0" y="667" width="353" height="664"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="white_gradient" id="0sn-DI-z0R">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="highlight_gradient" id="rak-cV-ZJk">
+                                        <rect key="frame" x="16" y="224" width="342" height="126"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mood rn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OpP-7B-Nu9">
@@ -47,6 +115,10 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="closeEmojiView" destination="B8L-Uk-COC" id="hup-dv-MRM"/>
+                        <outlet property="emojiView" destination="Jnk-0G-eUf" id="Mno-If-xZW"/>
+                        <outlet property="farEmojiView" destination="LQX-St-xp2" id="QyM-8t-h6C"/>
+                        <outlet property="midEmojiView" destination="yUY-qv-gie" id="gve-jN-AWj"/>
                         <segue destination="SU7-tu-zaS" kind="modal" identifier="loginSegue" id="D4o-bq-R4d"/>
                     </connections>
                 </viewController>
@@ -67,7 +139,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Nf8-Ev-9fT">
@@ -127,6 +199,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="close" width="344" height="651"/>
         <image name="emojiWallpaper" width="353" height="664"/>
+        <image name="far" width="350" height="576"/>
+        <image name="highlight_gradient" width="342" height="126"/>
+        <image name="mid" width="236" height="529"/>
+        <image name="white_gradient" width="375" height="667"/>
     </resources>
 </document>
