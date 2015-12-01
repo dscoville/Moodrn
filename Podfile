@@ -7,3 +7,5 @@ use_frameworks!
 pod 'Parse'
 pod 'ParseFacebookUtilsV4'
 
+pod 'HPLTagCloudGenerator', '~> 0.0.3'
+
