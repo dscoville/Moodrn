@@ -15,9 +15,14 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var cloudView: UIView!
     
-    // I want a whole bunch of strings
-    var dates: [String]!
-    var emojis: [String]!
+//    // I want a whole bunch of strings
+//    var dates: [String]!
+//    var emojis: [String]!
+//    var periods: [String]!
+    
+    // Using API
+    var dates: [NSDictionary]!
+    var emojis: [NSDictionary]!
     var periods: [String]!
     
     
@@ -26,22 +31,49 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //tableView.frame.size.height + cloudView.frame.size.height - 64
+        //initialize variable you're using api with, as an empty array
+        emojis = []
+        dates = []
+        
+        // tableView.frame.size.height + cloudView.frame.size.height - 64
         
         tableView.delegate = self
         tableView.dataSource = self
         
-        
-        // arrays
-        dates = ["Sat", "Fri", "Thu", "Wed", "Tue", "Mon", "Sun"]
-        print(dates[0])
+        // use an API and remember to add the security thing to the info.plist file
+        let url = NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=dagqdghwaq3e3mxyrp7kmmj5&limit=20&country=us")!
+        let request = NSURLRequest(URL: url)
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
 
-        emojis = ["☺️👍🏼💕💤", "🍲💁🏻💅🎵🌟🎉🍹🌆", "💩😢💔", "👌🏼🌸🍃🍀", "😴😴😴", "☔️", "🍎🏃🏻🚲"]
-        print(emojis[0])
+            let dictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
+            
+            //For everything you pull out of a filing cabinet / dictionary, need to use the as! statement to tell it the type
+            self.dates = dictionary["movies"] as! [NSDictionary]
+            self.emojis = dictionary["movies"] as! [NSDictionary]
+
+            
+            self.tableView.reloadData()
+            
+            print(dictionary)
+        }
+        
+        
+//        // arrays
+//        dates = ["Sat", "Fri", "Thu", "Wed", "Tue", "Mon", "Sun"]
+//        print(dates[0])
+
+//        emojis = ["☺️👍🏼💕💤", "🍲💁🏻💅🎵🌟🎉🍹🌆", "💩😢💔", "👌🏼🌸🍃🍀", "😴😴😴", "☔️", "🍎🏃🏻🚲"]
+//        print(emojis[0])
+        
         
         periods = ["This Week", "Last Week", "Nov 1-7", "Oct 25-31"]
         print(periods[0])
         
+        
+        
+        
+        
+        // Tag Cloud Generator Cocoapod
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
             var tagDict = ["👍🏼": 3,
                            "🍲": 5,
@@ -130,9 +162,9 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         var emoji = emojis[indexPath.row]
         
         
-        cell.dateLabel.text = date
+        cell.dateLabel.text = date["synopsis"] as? String
         
-        cell.emojiLabel.text = emoji
+        cell.emojiLabel.text = emoji["title"] as? String
         
         return cell
     }
