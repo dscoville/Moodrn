@@ -23,7 +23,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     
     // Using API
     var dates: [NSDictionary]!
-    var emojis: [PFObject]!
+    var emojis: [NSDictionary]!
     var periods: [String]!
     
     
