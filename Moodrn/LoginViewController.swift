@@ -14,10 +14,47 @@ import ParseFacebookUtilsV4
 
 class LoginViewController: UIViewController {
     
+    
+    @IBOutlet weak var emojiView: UIView!
+    @IBOutlet weak var farEmojiView: UIView!
+    @IBOutlet weak var midEmojiView: UIView!
+    @IBOutlet weak var closeEmojiView: UIView!
+    
+    
+    var farEmojiOriginalCenter: CGPoint!
+    var midEmojiOriginalCenter: CGPoint!
+    var closeEmojiOriginalCenter: CGPoint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        }
+        farEmojiOriginalCenter = farEmojiView.center
+        midEmojiOriginalCenter = midEmojiView.center
+        closeEmojiOriginalCenter = closeEmojiView.center
+
+
+        //emojiWallpaperOriginalCenter = emojiView.center
+        self.animateEmojiWallpaper()
+    
+    }
+    
+    func animateEmojiWallpaper() {
+        //animate smallest emojis slower than others
+        UIView.animateWithDuration(20.0, delay: 0.2, options: [.Repeat, .CurveLinear], animations: {
+            self.farEmojiView.center = CGPoint(x: self.farEmojiOriginalCenter.x, y: self.farEmojiOriginalCenter.y - 664)
+            }, completion: nil)
+        
+        UIView.animateWithDuration(16.0, delay: 0.2, options: [.Repeat, .CurveLinear], animations: {
+            self.midEmojiView.center = CGPoint(x: self.midEmojiOriginalCenter.x, y: self.midEmojiOriginalCenter.y - 664)
+            }, completion: nil)
+        
+        UIView.animateWithDuration(12.0, delay: 0.2, options: [.Repeat, .CurveLinear], animations: {
+            self.closeEmojiView.center = CGPoint(x: self.closeEmojiOriginalCenter.x, y: self.closeEmojiOriginalCenter.y - 664)
+            }, completion: nil)
+        
+        
+    }
+    
     
     @IBAction func didTapLogin(sender: AnyObject) {
     
