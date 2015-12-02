@@ -22,8 +22,8 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 //    var periods: [String]!
     
     // Using API
-    var dates: [NSDictionary]!
-    var emojis: [NSDictionary]!
+    var dates: [NSDate]!
+    var emojis: [PFObject]!
     var periods: [String]!
     
     
@@ -41,21 +41,21 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.dataSource = self
         
         // use an API and remember to add the security thing to the info.plist file
-        let url = NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=dagqdghwaq3e3mxyrp7kmmj5&limit=20&country=us")!
-        let request = NSURLRequest(URL: url)
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+//        let url = NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=dagqdghwaq3e3mxyrp7kmmj5&limit=20&country=us")!
+//        let request = NSURLRequest(URL: url)
+//        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
+//
+//            let dictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
+//            
+//            //For everything you pull out of a filing cabinet / dictionary, need to use the as! statement to tell it the type
+//            self.dates = dictionary["movies"] as! [NSDictionary]
+//            self.emojis = dictionary["movies"] as! [NSDictionary]
 
-            let dictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
             
-            //For everything you pull out of a filing cabinet / dictionary, need to use the as! statement to tell it the type
-            self.dates = dictionary["movies"] as! [NSDictionary]
-            self.emojis = dictionary["movies"] as! [NSDictionary]
-
-            
-            self.tableView.reloadData()
-            
-            print(dictionary)
-        }
+//            self.tableView.reloadData()
+//            
+//            //print(dictionary)
+//        }
         
         
 //        // arrays
@@ -108,6 +108,9 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
                     tagView.textColor = UIColor.blueColor()
                 }
             })
+            
+            
+            self.reloadMessages()
         }
 //        dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //            // This runs in a background thread
@@ -143,6 +146,26 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         // Dispose of any resources that can be recreated.
     }
 
+    func reloadMessages() {
+        print("reloading")
+        let query = PFQuery(className: "Message")
+        query.orderByAscending("createdAt")
+        // query.limit = 25
+    
+        let userEmail = PFUser.currentUser()?.email
+        ///////THIS IS WHERE WE NEED THE USERNAME
+        query.whereKey("username", equalTo: userEmail!)
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+        
+        
+            self.emojis = objects
+        
+            //print(self.messages)
+            self.tableView.reloadData()
+        }
+        
+    }
+
 
    // Tell table view how many rows in each section
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -156,16 +179,35 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         var cell = tableView.dequeueReusableCellWithIdentifier("MoodTableViewCell") as! MoodTableViewCell
         
         
-        //index path is which one we're on now
-        var date = dates[indexPath.row]
         let emoji = emojis[indexPath.row]
         
+        //Set the date to be the created field from Parse Class
+        let date = emoji.createdAt
         
-        cell.dateLabel.text = date["synopsis"] as? String
+        //Reformat the date to be a string
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "MMM-d"
+        let formatteddate = formatter.stringFromDate(date!)
+        cell.dateLabel.text = formatteddate
         
-        cell.emojiLabel.text = emoji["title"] as? String
+        cell.emojiLabel.text = emoji["text"] as? String
+        cell.emojiLabel.sizeToFit()
         
+        
+        
+        //print(cell.dateLabel.text)
         return cell
+        
+        //index path is which one we're on now
+//        var date = dates[indexPath.row]
+//        let emoji = emojis[indexPath.row]
+//        
+//        
+//        cell.dateLabel.text = date["synopsis"] as? String
+//        
+//        cell.emojiLabel.text = emoji["title"] as? String
+//        
+//        return cell
     }
     
 
