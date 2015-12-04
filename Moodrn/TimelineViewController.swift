@@ -75,43 +75,80 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         
         // Tag Cloud Generator Cocoapod
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
-            var tagDict = ["👍🏼": 3,
-                           "🍲": 5,
-                           "🍹": 7,
-                           "🍎": 9,
-                           "🎵": 11,
-                           "🚲": 13,
-                           "☺️": 15,
-                           "💕": 17,
-                           "🌟": 19,
-                           "👌🏼": 21,
-                           "☔️": 23,
-                           "😴": 25,
-                           "🎉": 25,
-                           "💤": 25,
-                           "🏃🏻": 25,
-                           "😁": 27,
-                           "😐": 27,
-                           "😎": 27,
-                           "🌺": 27,
-                           "💩": 100]
+//            var tagDict = ["👍🏼": 3,
+//                           "🍲": 5,
+//                           "🍹": 7,
+//                           "🍎": 9,
+//                           "🎵": 11,
+//                           "🚲": 13,
+//                           "☺️": 15,
+//                           "💕": 17,
+//                           "🌟": 19,
+//                           "👌🏼": 21,
+//                           "☔️": 23,
+//                           "😴": 25,
+//                           "🎉": 25,
+//                           "💤": 25,
+//                           "🏃🏻": 25,
+//                           "😁": 27,
+//                           "😐": 27,
+//                           "😎": 27,
+//                           "🌺": 27,
+//                           "💩": 100]
             
-            var tagGenerator = HPLTagCloudGenerator()
-            tagGenerator.size = self.cloudView.frame.size
-            tagGenerator.tagDict = tagDict
+            var tagDict = [String: Int]()
             
-            var views = tagGenerator.generateTagViews() as! [UILabel]
+            let query = PFQuery(className: "Message")
+            query.orderByAscending("createdAt")
+            // query.limit = 25
             
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                for tagView in views {
-                    self.cloudView.addSubview(tagView)
-                    tagView.textColor = UIColor.blueColor()
+            let userEmail = PFUser.currentUser()?.email
+            query.whereKey("username", equalTo: userEmail!)
+            query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+                
+                
+                self.emojis = objects
+                
+                for (index, element) in self.emojis.enumerate() {
+                    print("Item \(index): \(element)")
+                    let text = element["text"] as? String
+                    if text != nil {
+                        for character in text!.characters {
+                            print(character)
+                            let count = tagDict["\(character)"]
+                            if count != nil {
+                                tagDict["\(character)"] = count! + 1
+                            } else {
+                                tagDict["\(character)"] = 1
+                            }
+                        }
+                    }
                 }
-            })
-            
-            
-            self.reloadMessages()
+                
+                var tagGenerator = HPLTagCloudGenerator()
+                tagGenerator.size = self.cloudView.frame.size
+                tagGenerator.tagDict = tagDict
+                
+                var views = tagGenerator.generateTagViews() as! [UILabel]
+                
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    for tagView in views {
+                        self.cloudView.addSubview(tagView)
+                        tagView.textColor = UIColor.blueColor()
+                        //                    tagView.text =
+                    }
+                })
+                
+                
+                
+                self.reloadMessages()
+                
+            }
         }
+        
+        
+        
 //        dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //            // This runs in a background thread
 //            
