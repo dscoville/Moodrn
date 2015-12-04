@@ -8,12 +8,20 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var titles: [String]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titles = ["About", "Log Out"]
 
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,8 +35,30 @@ class SettingsViewController: UIViewController {
         
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
+    // how many rows?
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return titles.count
+    }
+    
+    // create the cells
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCellWithIdentifier("SettingsCell") as! SettingsCell
+        
+        var title = titles[indexPath.row]
+        
+        cell.titleLabel.text = title
+        
+        return cell
+    }
+    
+    
 
 }
+
+
+
 
 
 
