@@ -88,6 +88,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/FBSDKCoreKit.framework"
   install_framework "Pods/FBSDKLoginKit.framework"
   install_framework "Pods/HPLTagCloudGenerator.framework"
+  install_framework "Pods/NSString_RemoveEmoji.framework"
   install_framework "Pods/Parse.framework"
   install_framework "Pods/ParseFacebookUtilsV4.framework"
 fi
@@ -96,6 +97,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/FBSDKCoreKit.framework"
   install_framework "Pods/FBSDKLoginKit.framework"
   install_framework "Pods/HPLTagCloudGenerator.framework"
+  install_framework "Pods/NSString_RemoveEmoji.framework"
   install_framework "Pods/Parse.framework"
   install_framework "Pods/ParseFacebookUtilsV4.framework"
 fi

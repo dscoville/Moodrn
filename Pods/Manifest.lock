@@ -17,6 +17,7 @@ PODS:
   - FBSDKLoginKit (4.8.0):
     - FBSDKCoreKit
   - HPLTagCloudGenerator (0.0.3)
+  - NSString+RemoveEmoji (0.1.0)
   - Parse (1.9.1):
     - Bolts/Tasks (>= 1.4.0)
   - ParseFacebookUtilsV4 (1.9.1):
@@ -27,6 +28,7 @@ PODS:
 
 DEPENDENCIES:
   - HPLTagCloudGenerator (~> 0.0.3)
+  - NSString+RemoveEmoji
   - Parse
   - ParseFacebookUtilsV4
 
@@ -35,6 +37,7 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 66a935d17b6e00b6b64e604f2eb9b72c9ab7deb8
   FBSDKLoginKit: d893fcbb98d854496925e9ff73c67b896982d3c4
   HPLTagCloudGenerator: 2c3b973eabab214cb76126f084df31bf1b7a6adf
+  NSString+RemoveEmoji: 6901fb3a1cc9b6d0c0fc858155898b041fdfb493
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
   ParseFacebookUtilsV4: eab9b4ade12f0800b4d30f6b808bca55ce17a0e9
 

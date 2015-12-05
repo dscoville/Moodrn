@@ -67,7 +67,7 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         
         
         periods = ["This Week", "Last Week", "Nov 1-7", "Oct 25-31"]
-        print(periods[0])
+       // print(periods[0])
         
         
         
@@ -95,6 +95,22 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
                            "😎": 27,
                            "🌺": 27,
                            "💩": 100]
+            
+            let query = PFQuery(className: "Message")
+            query.orderByAscending("createdAt")
+            // query.limit = 25
+            
+            let userEmail = PFUser.currentUser()?.email
+            query.whereKey("username", equalTo: userEmail!)
+            query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+                
+                
+                self.emojis = objects
+
+                for (index, element) in self.emojis.enumerate() {
+                    print("Item \(index): \(element)")
+                }
+            }
             
             var tagGenerator = HPLTagCloudGenerator()
             tagGenerator.size = self.cloudView.frame.size
@@ -147,20 +163,18 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     }
 
     func reloadMessages() {
-        print("reloading")
+
         let query = PFQuery(className: "Message")
         query.orderByAscending("createdAt")
         // query.limit = 25
     
         let userEmail = PFUser.currentUser()?.email
-        ///////THIS IS WHERE WE NEED THE USERNAME
         query.whereKey("username", equalTo: userEmail!)
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
         
         
             self.emojis = objects
         
-            //print(self.messages)
             self.tableView.reloadData()
         }
         
@@ -193,9 +207,6 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         cell.emojiLabel.text = emoji["text"] as? String
         cell.emojiLabel.sizeToFit()
         
-        
-        
-        //print(cell.dateLabel.text)
         return cell
         
         //index path is which one we're on now
