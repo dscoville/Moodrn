@@ -169,6 +169,14 @@
                                     <action selector="didTapSignOutButton:" destination="fdD-ML-paP" eventType="touchUpInside" id="5db-Lj-Rdn"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YlC-xe-PwR">
+                                <rect key="frame" x="115" y="187" width="131" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go to timeline view"/>
+                                <connections>
+                                    <segue destination="e5K-7d-LP6" kind="push" id="gps-mt-A2t"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
