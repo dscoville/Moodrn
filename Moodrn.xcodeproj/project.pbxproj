@@ -255,7 +255,12 @@
 				TargetAttributes = {
 					9178C6BF1BFAE96D00F049F8 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = K56RB6354Y;
+						DevelopmentTeam = N64KM22VY8;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					9178C6D31BFAE96D00F049F8 = {
 						CreatedOnToolsVersion = 7.1;
@@ -532,7 +537,7 @@
 				);
 				INFOPLIST_FILE = Moodrn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = davidscompany.Moodrn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidscompany.Moodrn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -551,7 +556,7 @@
 				);
 				INFOPLIST_FILE = Moodrn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = davidscompany.Moodrn;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davidscompany.Moodrn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
