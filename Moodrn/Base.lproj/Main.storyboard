@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="e5K-7d-LP6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="u1k-Vm-jPN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -167,6 +167,14 @@
                                 <state key="normal" title="Sign Out"/>
                                 <connections>
                                     <action selector="didTapSignOutButton:" destination="fdD-ML-paP" eventType="touchUpInside" id="5db-Lj-Rdn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YlC-xe-PwR">
+                                <rect key="frame" x="115" y="187" width="131" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go to timeline view"/>
+                                <connections>
+                                    <segue destination="e5K-7d-LP6" kind="push" id="gps-mt-A2t"/>
                                 </connections>
                             </button>
                         </subviews>
