@@ -16,6 +16,8 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var cloudView: UIView!
     
+    
+    
 //    // I want a whole bunch of strings
 //    var dates: [String]!
 //    var emojis: [String]!
@@ -25,8 +27,10 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     var dates: [NSDate]!
     var emojis: [PFObject]!
     var periods: [String]!
+    var photos: [PFObject]!
     
     
+    @IBOutlet weak var settingsButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -35,10 +39,53 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         //initialize variable you're using api with, as an empty array
         emojis = []
         dates = []
+        photos = []
         
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        
+        
+        let query = PFQuery(className: "User")
+        
+        let photo = PFUser.currentUser()?.email
+        
+        query.whereKey("profile_picture", equalTo: photo!)
+        
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            self.photos = objects
+            self.tableView.reloadData()
+            print(self.photos)
+            
+        }
+        
+        // set Settings button to FB profile picture
+        settingsButton.setImage(UIImage(named: "settings.png")!, forState: .Normal)
+        
+        
+        
+//        func reloadMessages() {
+//            print("reloading")
+//            let query = PFQuery(className: "Message")
+//            query.orderByAscending("createdAt")
+//            // query.limit = 25
+//            
+//            let userEmail = PFUser.currentUser()?.email
+//            ///////THIS IS WHERE WE NEED THE USERNAME
+//            query.whereKey("username", equalTo: userEmail!)
+//            query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+//                
+//                
+//                self.emojis = objects
+//                
+//                //print(self.messages)
+//                self.tableView.reloadData()
+//            }
+//            
+//        }
+
         
         // use an API and remember to add the security thing to the info.plist file
 //        let url = NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=dagqdghwaq3e3mxyrp7kmmj5&limit=20&country=us")!

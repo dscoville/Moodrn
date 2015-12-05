@@ -260,7 +260,7 @@
                                         <rect key="frame" x="0.0" y="272" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AHP-XI-TfR" id="EAb-6O-qX3">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22/22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3iF-3W-T0Y" userLabel="Date">
@@ -319,6 +319,10 @@
                                             <segue destination="s9v-N3-2ks" kind="modal" id="5yP-xV-pk2"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ASQ-ha-RGT">
+                                        <rect key="frame" x="-58" y="-45" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
@@ -335,6 +339,7 @@
                     <size key="freeformSize" width="375" height="1334"/>
                     <connections>
                         <outlet property="cloudView" destination="wMB-IM-OIW" id="gvG-iX-mmX"/>
+                        <outlet property="settingsButton" destination="cE5-mz-MVf" id="inM-Dd-bSL"/>
                         <outlet property="tableView" destination="ENi-wt-9N7" id="riV-HO-5Gc"/>
                     </connections>
                 </viewController>
