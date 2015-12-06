@@ -19,31 +19,32 @@ import ParseFacebookUtilsV4
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Parse.setApplicationId("jhfxDUb6bVv70p0I22v5GBG3py7Xoxvxucf6NKzW", clientKey:"yzChRhrKqEkQ9NTsPYvJqx7C02PgDMP3yWNvCSj1")
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
-        return true
+        
         
         //notifications stuff from parse
         
         //this first part didn't work
         //let userNotificationTypes = (UIUserNotificationType.Alert ||  UIUserNotificationType.Badge ||  UIUserNotificationType.Sound);
-        
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         application.registerUserNotificationSettings(settings)
         application.registerForRemoteNotifications()
-        
+        return true
     }
-    func application(application: UIApplication,
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData,
         openURL url: NSURL,
-        didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData,
         sourceApplication: String?,
         annotation: AnyObject?) -> Bool {
-            return FBSDKApplicationDelegate.sharedInstance().application(application,
-                openURL: url,
-                sourceApplication: sourceApplication,
-                annotation: annotation)
             // Store the deviceToken in the current Installation and save it to Parse
             let installation = PFInstallation.currentInstallation()
             installation.setDeviceTokenFromData(deviceToken)
             installation.saveInBackground()
+            
+            return FBSDKApplicationDelegate.sharedInstance().application(application,
+                openURL: url,
+                sourceApplication: sourceApplication,
+                annotation: annotation)
+
     }
     
     func applicationWillResignActive(application: UIApplication) {
