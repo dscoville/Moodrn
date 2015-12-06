@@ -28,6 +28,14 @@ import ParseFacebookUtilsV4
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         application.registerUserNotificationSettings(settings)
         application.registerForRemoteNotifications()
+        
+        // The below nested if-statement simply checks if the app was launched because of a notification, and if so, we call our didReceiveRemoteNotification function.
+        if let launchOptions = launchOptions as? [String : AnyObject] {
+            if let notificationDictionary = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey] as? [NSObject : AnyObject] {
+                self.application(application, didReceiveRemoteNotification: notificationDictionary)
+            }
+        }
+        
         return true
     }
     
@@ -48,10 +56,10 @@ import ParseFacebookUtilsV4
         installation.saveInBackground()
     }
     
-    func application(didReceiveRemoteNotification userInfo: NSDictionary) {
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         PFPush.handlePush(userInfo)
-        
     }
+    
     
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
