@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "Moodrn": {
+      "applicationId": "jhfxDUb6bVv70p0I22v5GBG3py7Xoxvxucf6NKzW"
+    },
+    "_default": {
+      "link": "Moodrn"
+    }
+  }
+}

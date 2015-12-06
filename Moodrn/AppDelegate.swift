@@ -48,10 +48,10 @@ import ParseFacebookUtilsV4
         installation.saveInBackground()
     }
     
-    //func application(application: UIApplication, didReceiveRemoteNotification: NSDictionary) {
-    //    let push = PFPush()
-    //    push.handlePush([NSObject : AnyObject]?)
-    //}
+    func application(didReceiveRemoteNotification userInfo: NSDictionary) {
+        PFPush.handlePush(userInfo)
+        
+    }
     
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -74,7 +74,7 @@ import ParseFacebookUtilsV4
         if currentInstallation.badge != 0 {
             currentInstallation.badge = 0
             currentInstallation.saveEventually()
-            print("Notification badge cleared")
+            print("Notification badge count cleared")
         }
     }
 
