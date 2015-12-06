@@ -31,20 +31,21 @@ import ParseFacebookUtilsV4
         return true
     }
     
-    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData,
+    func application(application: UIApplication,
         openURL url: NSURL,
         sourceApplication: String?,
-        annotation: AnyObject?) -> Bool {
-            // Store the deviceToken in the current Installation and save it to Parse
-            let installation = PFInstallation.currentInstallation()
-            installation.setDeviceTokenFromData(deviceToken)
-            installation.saveInBackground()
-            
+        annotation: AnyObject) -> Bool {
             return FBSDKApplicationDelegate.sharedInstance().application(application,
                 openURL: url,
                 sourceApplication: sourceApplication,
                 annotation: annotation)
-
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        // Store the deviceToken in the current Installation and save it to Parse
+        let installation = PFInstallation.currentInstallation()
+        installation.setDeviceTokenFromData(deviceToken)
+        installation.saveInBackground()
     }
     
     func applicationWillResignActive(application: UIApplication) {
