@@ -21,10 +21,7 @@ import ParseFacebookUtilsV4
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
         
         
-        //notifications stuff from parse
-        
-        //this first part didn't work
-        //let userNotificationTypes = (UIUserNotificationType.Alert ||  UIUserNotificationType.Badge ||  UIUserNotificationType.Sound);
+        //request permission for notifications
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         application.registerUserNotificationSettings(settings)
         application.registerForRemoteNotifications()

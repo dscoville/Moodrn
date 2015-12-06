@@ -92,6 +92,18 @@ class MessageViewController: UIViewController {
             self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
+    
+    @IBAction func didTapMorningButton(sender: AnyObject) {
+        // When users indicate they want morning notifications, we subscribe them to that channel.
+        let currentInstallation = PFInstallation.currentInstallation()
+        currentInstallation.addUniqueObject("Morning", forKey: "channels")
+        currentInstallation.saveInBackground()
+        print("Successfully subscribed to \(currentInstallation.channels)")
+        
+        performSegueWithIdentifier("timelineSegue", sender: nil)
+        
+    }
+    
 
     /*
     // MARK: - Navigation
