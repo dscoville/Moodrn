@@ -23,10 +23,10 @@
 		9178C6FB1BFAEE5800F049F8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9178C6F91BFAEE5800F049F8 /* FBSDKCoreKit.framework */; };
 		9178C6FC1BFAEE5800F049F8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9178C6FA1BFAEE5800F049F8 /* FBSDKLoginKit.framework */; };
 		C82CC7D41BFD509B0059389A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82CC7D31BFD509B0059389A /* LoginViewController.swift */; };
-		C864D6EC1C13E8D000025805 /* .parse.local in Resources */ = {isa = PBXBuildFile; fileRef = C864D6E61C13E8D000025805 /* .parse.local */; };
-		C864D6ED1C13E8D000025805 /* .parse.project in Resources */ = {isa = PBXBuildFile; fileRef = C864D6E71C13E8D000025805 /* .parse.project */; };
-		C864D6EE1C13E8D000025805 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = C864D6E91C13E8D000025805 /* main.js */; };
-		C864D6EF1C13E8D000025805 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = C864D6EB1C13E8D000025805 /* index.html */; };
+		C864D6F71C14F62B00025805 /* .parse.local in Resources */ = {isa = PBXBuildFile; fileRef = C864D6F11C14F62B00025805 /* .parse.local */; };
+		C864D6F81C14F62B00025805 /* .parse.project in Resources */ = {isa = PBXBuildFile; fileRef = C864D6F21C14F62B00025805 /* .parse.project */; };
+		C864D6F91C14F62B00025805 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = C864D6F41C14F62B00025805 /* main.js */; };
+		C864D6FA1C14F62B00025805 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = C864D6F61C14F62B00025805 /* index.html */; };
 		C88EBDAD1C0297B500F7D8B3 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88EBDAC1C0297B500F7D8B3 /* MessageViewController.swift */; };
 		C88EBDAE1C0298EE00F7D8B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82CC7D31BFD509B0059389A /* LoginViewController.swift */; };
 		C88EBDAF1C0298F700F7D8B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82CC7D31BFD509B0059389A /* LoginViewController.swift */; };
@@ -79,10 +79,10 @@
 		9178C6FA1BFAEE5800F049F8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		C82CC7D31BFD509B0059389A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C864D6E31C13BCCD00025805 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		C864D6E61C13E8D000025805 /* .parse.local */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .parse.local; sourceTree = "<group>"; };
-		C864D6E71C13E8D000025805 /* .parse.project */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .parse.project; sourceTree = "<group>"; };
-		C864D6E91C13E8D000025805 /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
-		C864D6EB1C13E8D000025805 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		C864D6F11C14F62B00025805 /* .parse.local */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .parse.local; sourceTree = "<group>"; };
+		C864D6F21C14F62B00025805 /* .parse.project */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .parse.project; sourceTree = "<group>"; };
+		C864D6F41C14F62B00025805 /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
+		C864D6F61C14F62B00025805 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
 		C88EBDAC1C0297B500F7D8B3 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,9 +141,9 @@
 				9178C6C21BFAE96D00F049F8 /* Moodrn */,
 				9178C6D71BFAE96D00F049F8 /* MoodrnTests */,
 				9178C6E21BFAE96D00F049F8 /* MoodrnUITests */,
+				C864D6F01C14F62B00025805 /* parse-cloud-code */,
 				9178C6C11BFAE96D00F049F8 /* Products */,
 				4199DBAD109C186B03EB1BB4 /* Pods */,
-				C864D6E51C13E8D000025805 /* Moodrn-Parse-Cloud-Code */,
 				14E64B6A9507AA717A59BD0E /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -195,29 +195,29 @@
 			path = MoodrnUITests;
 			sourceTree = "<group>";
 		};
-		C864D6E51C13E8D000025805 /* Moodrn-Parse-Cloud-Code */ = {
+		C864D6F01C14F62B00025805 /* parse-cloud-code */ = {
 			isa = PBXGroup;
 			children = (
-				C864D6E61C13E8D000025805 /* .parse.local */,
-				C864D6E71C13E8D000025805 /* .parse.project */,
-				C864D6E81C13E8D000025805 /* cloud */,
-				C864D6EA1C13E8D000025805 /* public */,
+				C864D6F11C14F62B00025805 /* .parse.local */,
+				C864D6F21C14F62B00025805 /* .parse.project */,
+				C864D6F31C14F62B00025805 /* cloud */,
+				C864D6F51C14F62B00025805 /* public */,
 			);
-			path = "Moodrn-Parse-Cloud-Code";
+			path = "parse-cloud-code";
 			sourceTree = "<group>";
 		};
-		C864D6E81C13E8D000025805 /* cloud */ = {
+		C864D6F31C14F62B00025805 /* cloud */ = {
 			isa = PBXGroup;
 			children = (
-				C864D6E91C13E8D000025805 /* main.js */,
+				C864D6F41C14F62B00025805 /* main.js */,
 			);
 			path = cloud;
 			sourceTree = "<group>";
 		};
-		C864D6EA1C13E8D000025805 /* public */ = {
+		C864D6F51C14F62B00025805 /* public */ = {
 			isa = PBXGroup;
 			children = (
-				C864D6EB1C13E8D000025805 /* index.html */,
+				C864D6F61C14F62B00025805 /* index.html */,
 			);
 			path = public;
 			sourceTree = "<group>";
@@ -337,13 +337,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C864D6EF1C13E8D000025805 /* index.html in Resources */,
+				C864D6FA1C14F62B00025805 /* index.html in Resources */,
 				9178C6CE1BFAE96D00F049F8 /* LaunchScreen.storyboard in Resources */,
 				9178C6CB1BFAE96D00F049F8 /* Assets.xcassets in Resources */,
-				C864D6EC1C13E8D000025805 /* .parse.local in Resources */,
-				C864D6EE1C13E8D000025805 /* main.js in Resources */,
+				C864D6F71C14F62B00025805 /* .parse.local in Resources */,
+				C864D6F91C14F62B00025805 /* main.js in Resources */,
 				9178C6C91BFAE96D00F049F8 /* Main.storyboard in Resources */,
-				C864D6ED1C13E8D000025805 /* .parse.project in Resources */,
+				C864D6F81C14F62B00025805 /* .parse.project in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

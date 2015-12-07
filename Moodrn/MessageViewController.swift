@@ -97,8 +97,21 @@ class MessageViewController: UIViewController {
         // When users indicate they want morning notifications, we subscribe them to that channel.
         let currentInstallation = PFInstallation.currentInstallation()
         currentInstallation.addUniqueObject("Morning", forKey: "channels")
+        currentInstallation["channles"] = PFUser.currentUser()
         currentInstallation.saveInBackground()
         print("Successfully subscribed to \(currentInstallation.channels)")
+        
+        let channels = [ "Morning" ];
+        let push = PFPush()
+        let data = [
+            "alert" : "The Mets scored! The game is now tied 1-1!",
+            "badge" : "Increment"
+        ]
+        
+        // Be sure to use the plural 'setChannels'.
+        push.setChannels(channels)
+        push.setData(data)
+        push.sendPushInBackground()
         
         performSegueWithIdentifier("timelineSegue", sender: nil)
         
