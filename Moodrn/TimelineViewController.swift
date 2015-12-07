@@ -16,6 +16,8 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var cloudView: UIView!
     
+    
+    
 //    // I want a whole bunch of strings
 //    var dates: [String]!
 //    var emojis: [String]!
@@ -25,8 +27,10 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     var dates: [NSDate]!
     var emojis: [PFObject]!
     var periods: [String]!
+    var photos: [PFObject]!
     
     
+    @IBOutlet weak var settingsButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -35,10 +39,52 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         //initialize variable you're using api with, as an empty array
         emojis = []
         dates = []
-        
+        photos = []
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        
+        
+        let query = PFQuery(className: "User")
+        
+        let photo = PFUser.currentUser()?.email
+        
+        query.whereKey("profile_picture", equalTo: photo!)
+        
+        query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+            
+            self.photos = objects
+            self.tableView.reloadData()
+            print(self.photos)
+            
+        }
+        
+        // set Settings button to FB profile picture
+        settingsButton.setImage(UIImage(named: "settings.png")!, forState: .Normal)
+        
+        
+        
+//        func reloadMessages() {
+//            print("reloading")
+//            let query = PFQuery(className: "Message")
+//            query.orderByAscending("createdAt")
+//            // query.limit = 25
+//            
+//            let userEmail = PFUser.currentUser()?.email
+//            ///////THIS IS WHERE WE NEED THE USERNAME
+//            query.whereKey("username", equalTo: userEmail!)
+//            query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+//                
+//                
+//                self.emojis = objects
+//                
+//                //print(self.messages)
+//                self.tableView.reloadData()
+//            }
+//            
+//        }
+
         
         // use an API and remember to add the security thing to the info.plist file
 //        let url = NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=dagqdghwaq3e3mxyrp7kmmj5&limit=20&country=us")!
@@ -66,12 +112,9 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 //        print(emojis[0])
         
         
+
         periods = ["This Week", "Last Week", "Nov 1-7", "Oct 25-31"]
         print(periods[0])
-        
-        
-        
-        
         
         // Tag Cloud Generator Cocoapod
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
@@ -110,11 +153,11 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
                 self.emojis = objects
                 
                 for (index, element) in self.emojis.enumerate() {
-                    print("Item \(index): \(element)")
+                    //print("Item \(index): \(element)")
                     let text = element["text"] as? String
                     if text != nil {
                         for character in text!.characters {
-                            print(character)
+                            //print(character)
                             let count = tagDict["\(character)"]
                             if count != nil {
                                 tagDict["\(character)"] = count! + 1
@@ -149,6 +192,8 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         
         
         
+        
+        
 //        dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //            // This runs in a background thread
 //            
@@ -177,6 +222,12 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 //            });
     
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.reloadMessages()
+
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -184,9 +235,9 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     }
 
     func reloadMessages() {
-        print("reloading")
+        //print("reloading")
         let query = PFQuery(className: "Message")
-        query.orderByAscending("createdAt")
+        query.orderByDescending("createdAt")
         // query.limit = 25
     
         let userEmail = PFUser.currentUser()?.email

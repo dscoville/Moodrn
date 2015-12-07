@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Parse
 
 class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var photo: [PFObject]!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,9 +21,51 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         
         titles = ["About", "Log Out"]
+        photo = []
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+        
+//        var user = photo.objectForKey("username") as! PFUser
+//        
+//        user.fetchIfNeededInBackgroundWithBlock { (obj: PFObject?, error: NSError?) -> Void in
+//            if obj != nil {
+//                var fetchedUser = obj as! PFUser
+//                var username = fetchedUser["username"] as! String
+//                cell.username.text = user.username
+//                
+//                //Profile Picture Retrieve
+//                
+//                if let userImageFile:PFFile = user["photo"] as? PFFile{
+//                    println("working")
+//                    userImageFile.getDataInBackgroundWithBlock {
+//                        (imageData: NSData?, error: NSError?) -> Void in
+//                        if (error == nil) {
+//                            if imageData != nil{
+//                                cell.profileImage.image = UIImage(data:imageData!)
+//                            }else{
+//                                println("No Data")
+//                            }
+//                            
+//                        }else{
+//                            println(error)
+//                        }
+//                    }
+//                    
+//                }else{
+//                    
+//                    println("Something Error") // Always getting this
+//                    
+//                }
+//                
+//                
+//                
+//            }
+//        }
+//
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
