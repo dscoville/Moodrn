@@ -41,7 +41,6 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         dates = []
         photos = []
         
-        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -113,12 +112,9 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 //        print(emojis[0])
         
         
+
         periods = ["This Week", "Last Week", "Nov 1-7", "Oct 25-31"]
         print(periods[0])
-        
-        
-        
-        
         
         // Tag Cloud Generator Cocoapod
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
@@ -157,11 +153,11 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
                 self.emojis = objects
                 
                 for (index, element) in self.emojis.enumerate() {
-                    print("Item \(index): \(element)")
+                    //print("Item \(index): \(element)")
                     let text = element["text"] as? String
                     if text != nil {
                         for character in text!.characters {
-                            print(character)
+                            //print(character)
                             let count = tagDict["\(character)"]
                             if count != nil {
                                 tagDict["\(character)"] = count! + 1
@@ -196,6 +192,8 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         
         
         
+        
+        
 //        dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //            // This runs in a background thread
 //            
@@ -224,6 +222,12 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 //            });
     
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.reloadMessages()
+
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -231,9 +235,9 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     }
 
     func reloadMessages() {
-        print("reloading")
+        //print("reloading")
         let query = PFQuery(className: "Message")
-        query.orderByAscending("createdAt")
+        query.orderByDescending("createdAt")
         // query.limit = 25
     
         let userEmail = PFUser.currentUser()?.email
