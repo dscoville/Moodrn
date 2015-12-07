@@ -22,6 +22,7 @@
 		9178C6E41BFAE96D00F049F8 /* MoodrnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9178C6E31BFAE96D00F049F8 /* MoodrnUITests.swift */; };
 		9178C6FB1BFAEE5800F049F8 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9178C6F91BFAEE5800F049F8 /* FBSDKCoreKit.framework */; };
 		9178C6FC1BFAEE5800F049F8 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9178C6FA1BFAEE5800F049F8 /* FBSDKLoginKit.framework */; };
+		91C3C9F31C15473200E31D83 /* ComposerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C3C9F21C15473200E31D83 /* ComposerViewController.swift */; };
 		C82CC7D41BFD509B0059389A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82CC7D31BFD509B0059389A /* LoginViewController.swift */; };
 		C88EBDAD1C0297B500F7D8B3 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88EBDAC1C0297B500F7D8B3 /* MessageViewController.swift */; };
 		C88EBDAE1C0298EE00F7D8B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82CC7D31BFD509B0059389A /* LoginViewController.swift */; };
@@ -73,6 +74,7 @@
 		9178C6E51BFAE96D00F049F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9178C6F91BFAEE5800F049F8 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		9178C6FA1BFAEE5800F049F8 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		91C3C9F21C15473200E31D83 /* ComposerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposerViewController.swift; sourceTree = SOURCE_ROOT; };
 		C82CC7D31BFD509B0059389A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C88EBDAC1C0297B500F7D8B3 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +163,7 @@
 				9178C6CC1BFAE96D00F049F8 /* LaunchScreen.storyboard */,
 				9178C6CF1BFAE96D00F049F8 /* Info.plist */,
 				C88EBDAC1C0297B500F7D8B3 /* MessageViewController.swift */,
+				91C3C9F21C15473200E31D83 /* ComposerViewController.swift */,
 				1428C9001C1161BC006CBDF6 /* NewViewController.swift */,
 			);
 			path = Moodrn;
@@ -375,6 +378,7 @@
 				9178C6C61BFAE96D00F049F8 /* ViewController.swift in Sources */,
 				C88EBDAD1C0297B500F7D8B3 /* MessageViewController.swift in Sources */,
 				9178C6C41BFAE96D00F049F8 /* AppDelegate.swift in Sources */,
+				91C3C9F31C15473200E31D83 /* ComposerViewController.swift in Sources */,
 				1428C9011C1161BC006CBDF6 /* NewViewController.swift in Sources */,
 				1458FB831BFD4F66008DF1AE /* TimelineViewController.swift in Sources */,
 				14CDC3451C1177FD00F574BD /* SettingsViewController.swift in Sources */,
