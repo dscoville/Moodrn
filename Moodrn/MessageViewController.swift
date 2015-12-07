@@ -94,6 +94,28 @@ class MessageViewController: UIViewController {
     }
     
     @IBAction func didTapMorningButton(sender: AnyObject) {
+        //request notification permission
+        
+        let replyAction = UIMutableUserNotificationAction()
+        replyAction.identifier = "TEXT_ACTION"
+        replyAction.destructive = false
+        replyAction.title = "Reply"
+        replyAction.activationMode = .Background
+        replyAction.authenticationRequired = false
+        replyAction.behavior = .TextInput
+        
+        let category = UIMutableUserNotificationCategory()
+        category.identifier = "HOWAREYOUFEELING"
+        category.setActions([replyAction], forContext: .Default)
+        category.setActions([replyAction], forContext: .Minimal)
+        
+        let categories = NSSet(object: category) as! Set<UIUserNotificationCategory>
+        
+
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: categories)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        UIApplication.sharedApplication().registerForRemoteNotifications()
+        
         // When users indicate they want morning notifications, we subscribe them to that channel.
         let currentInstallation = PFInstallation.currentInstallation()
         let subscribedChannels = PFInstallation.currentInstallation().channels
@@ -135,6 +157,11 @@ class MessageViewController: UIViewController {
     }
     
     @IBAction func didTapAfternoonButton(sender: AnyObject) {
+        //request notification permission
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        UIApplication.sharedApplication().registerForRemoteNotifications()
+        
         // When users indicate they want afternoon notifications, we subscribe them to that channel.
         let currentInstallation = PFInstallation.currentInstallation()
         currentInstallation.channels = []
@@ -148,6 +175,11 @@ class MessageViewController: UIViewController {
     }
     
     @IBAction func didTapEveningButton(sender: AnyObject) {
+        //request notification permission
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        UIApplication.sharedApplication().registerForRemoteNotifications()
+        
         // When users indicate they want Evening notifications, we subscribe them to that channel.
         let currentInstallation = PFInstallation.currentInstallation()
         

@@ -2,8 +2,9 @@ Parse.Cloud.job('sendRecurringNotificationToMorning', function(request, response
                 Parse.Push.send({
                                 channels: ['Morning'],
                                 data: {
-                                alert: 'Hello morning crowd how are you feeling today?'
-                                category: CategoryNameHere
+                                alert: 'Hello morning crowd how are you feeling today?',
+                                view: 'ComposerViewController',
+                                category: 'HOWAREYOUFEELING'
                                 }
                                 }, {
                                 success: function() {
@@ -19,7 +20,9 @@ Parse.Cloud.job('sendRecurringNotificationToAfternoon', function(request, respon
                 Parse.Push.send({
                                 channels: ['Afternoon'],
                                 data: {
-                                alert: 'Hello afternoon crowd how are you feeling today?'
+                                alert: 'Hello afternoon crowd how are you feeling today?',
+                                view: 'ComposerViewController',
+                                category: 'HOWAREYOUFEELING'
                                 }
                                 }, {
                                 success: function() {
@@ -35,7 +38,9 @@ Parse.Cloud.job('sendRecurringNotificationToEvening', function(request, response
                 Parse.Push.send({
                                 channels: ['Evening'],
                                 data: {
-                                alert: 'Hello evening crowd how are you feeling today?'
+                                alert: 'Hello evening crowd how are you feeling today?',
+                                view: 'ComposerViewController',
+                                category: 'HOWAREYOUFEELING'
                                 }
                                 }, {
                                 success: function() {
