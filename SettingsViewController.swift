@@ -10,60 +10,30 @@ import UIKit
 import Parse
 
 class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    var photo: [PFObject]!
+
     
     @IBOutlet weak var tableView: UITableView!
     
     var titles: [String]!
+    var subtitles: [String]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titles = ["About", "Log Out"]
-        photo = []
+        
+        let userEmail = PFUser.currentUser()?.email
+//        nameLabel.text = "\(userEmail)"
+//        print("\(userEmail)")
+        
+        titles = ["Notifications", "Log Out"]
+        subtitles = ["Choose when you get notifications, Logged in as \(userEmail)"]
 
         tableView.delegate = self
         tableView.dataSource = self
         
+
+
         
-//        var user = photo.objectForKey("username") as! PFUser
-//        
-//        user.fetchIfNeededInBackgroundWithBlock { (obj: PFObject?, error: NSError?) -> Void in
-//            if obj != nil {
-//                var fetchedUser = obj as! PFUser
-//                var username = fetchedUser["username"] as! String
-//                cell.username.text = user.username
-//                
-//                //Profile Picture Retrieve
-//                
-//                if let userImageFile:PFFile = user["photo"] as? PFFile{
-//                    println("working")
-//                    userImageFile.getDataInBackgroundWithBlock {
-//                        (imageData: NSData?, error: NSError?) -> Void in
-//                        if (error == nil) {
-//                            if imageData != nil{
-//                                cell.profileImage.image = UIImage(data:imageData!)
-//                            }else{
-//                                println("No Data")
-//                            }
-//                            
-//                        }else{
-//                            println(error)
-//                        }
-//                    }
-//                    
-//                }else{
-//                    
-//                    println("Something Error") // Always getting this
-//                    
-//                }
-//                
-//                
-//                
-//            }
-//        }
-//
         
         
     }
@@ -91,8 +61,11 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         var cell = tableView.dequeueReusableCellWithIdentifier("SettingsCell") as! SettingsCell
         
         var title = titles[indexPath.row]
-        
         cell.titleLabel.text = title
+
+//        
+//        var subtitle = subtitles[indexPath.row]
+//        cell.subtitleLabel.text = subtitle
         
         return cell
     }
