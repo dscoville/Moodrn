@@ -96,25 +96,70 @@ class MessageViewController: UIViewController {
     @IBAction func didTapMorningButton(sender: AnyObject) {
         // When users indicate they want morning notifications, we subscribe them to that channel.
         let currentInstallation = PFInstallation.currentInstallation()
-        currentInstallation.addUniqueObject("Morning", forKey: "channels")
-        currentInstallation["channles"] = PFUser.currentUser()
+        let subscribedChannels = PFInstallation.currentInstallation().channels
+     
+        currentInstallation.channels = []
         currentInstallation.saveInBackground()
-        print("Successfully subscribed to \(currentInstallation.channels)")
+
         
-        let channels = [ "Morning" ];
-        let push = PFPush()
-        let data = [
-            "alert" : "The Mets scored! The game is now tied 1-1!",
-            "badge" : "Increment"
-        ]
+        //    currentInstallation.removeObject("Evening", forKey: "channels")
+        //    currentInstallation.saveInBackground()
+        //}
+        
+        currentInstallation.addUniqueObject("Morning", forKey: "channels")
+        currentInstallation.saveInBackground()
+
+        print("Successfully subscribed to \(subscribedChannels)")
+        
+        //let channels = [ "Morning" ];
+        //let push = PFPush()
+        //let data = [
+        //    "alert" : "it's morning time the early time",
+        //    "badge" : "Increment"
+        //]
         
         // Be sure to use the plural 'setChannels'.
-        push.setChannels(channels)
-        push.setData(data)
-        push.sendPushInBackground()
+       // push.setChannels(channels)
+       // push.setData(data)
+       // push.sendPushInBackground()
+        
+        //save channels to parse user
+        
+        //myUser.setObject(userFirstName!, forKey: "first_name")
+        //currentInstallation.setObject(channels, forKey: "channels")
+        //currentInstallation.channels = PFUser.currentUser()
+        //currentInstallation.saveInBackground()
         
         performSegueWithIdentifier("timelineSegue", sender: nil)
         
+    }
+    
+    @IBAction func didTapAfternoonButton(sender: AnyObject) {
+        // When users indicate they want afternoon notifications, we subscribe them to that channel.
+        let currentInstallation = PFInstallation.currentInstallation()
+        currentInstallation.channels = []
+        currentInstallation.saveInBackground()
+
+        currentInstallation.addUniqueObject("Afternoon", forKey: "channels")
+        currentInstallation.saveInBackground()
+        print("Successfully subscribed to \(currentInstallation.channels)")
+        
+        performSegueWithIdentifier("timelineSegue", sender: nil)
+    }
+    
+    @IBAction func didTapEveningButton(sender: AnyObject) {
+        // When users indicate they want Evening notifications, we subscribe them to that channel.
+        let currentInstallation = PFInstallation.currentInstallation()
+        
+        currentInstallation.channels = []
+        currentInstallation.saveInBackground()
+        
+        currentInstallation.addUniqueObject("Evening", forKey: "channels")
+        currentInstallation.saveInBackground()
+        
+        print("Successfully subscribed to \(currentInstallation.channels)")
+        
+        performSegueWithIdentifier("timelineSegue", sender: nil)
     }
     
 

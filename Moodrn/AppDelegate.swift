@@ -23,8 +23,8 @@ import ParseFacebookUtilsV4
         
         //request permission for notifications
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
-        application.registerUserNotificationSettings(settings)
-        application.registerForRemoteNotifications()
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        UIApplication.sharedApplication().registerForRemoteNotifications()
         
         // The below nested if-statement simply checks if the app was launched because of a notification, and if so, we call our didReceiveRemoteNotification function.
         if let launchOptions = launchOptions as? [String : AnyObject] {
@@ -51,6 +51,7 @@ import ParseFacebookUtilsV4
         let installation = PFInstallation.currentInstallation()
         installation.setDeviceTokenFromData(deviceToken)
         installation.saveInBackground()
+        print("Did Register for Remote Notifications with Device Token")
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {

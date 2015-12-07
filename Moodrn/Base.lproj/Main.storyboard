@@ -189,11 +189,17 @@
                                 <rect key="frame" x="160" y="465" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Evening"/>
+                                <connections>
+                                    <action selector="didTapEveningButton:" destination="fdD-ML-paP" eventType="touchUpInside" id="2SD-nl-bmH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wOg-Uv-owu">
                                 <rect key="frame" x="153" y="393" width="69" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Afternoon"/>
+                                <connections>
+                                    <action selector="didTapAfternoonButton:" destination="fdD-ML-paP" eventType="touchUpInside" id="Jae-IV-Rgo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>

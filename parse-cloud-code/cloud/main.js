@@ -3,6 +3,7 @@ Parse.Cloud.job('sendRecurringNotificationToMorning', function(request, response
                                 channels: ['Morning'],
                                 data: {
                                 alert: 'Hello morning crowd how are you feeling today?'
+                                category: CategoryNameHere
                                 }
                                 }, {
                                 success: function() {
