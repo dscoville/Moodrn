@@ -36,42 +36,11 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         emojis = []
         dates = []
         
-        
         tableView.delegate = self
         tableView.dataSource = self
-        
-        // use an API and remember to add the security thing to the info.plist file
-//        let url = NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=dagqdghwaq3e3mxyrp7kmmj5&limit=20&country=us")!
-//        let request = NSURLRequest(URL: url)
-//        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse?, data: NSData?, error: NSError?) -> Void in
-//
-//            let dictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
-//            
-//            //For everything you pull out of a filing cabinet / dictionary, need to use the as! statement to tell it the type
-//            self.dates = dictionary["movies"] as! [NSDictionary]
-//            self.emojis = dictionary["movies"] as! [NSDictionary]
-
-            
-//            self.tableView.reloadData()
-//            
-//            //print(dictionary)
-//        }
-        
-        
-//        // arrays
-//        dates = ["Sat", "Fri", "Thu", "Wed", "Tue", "Mon", "Sun"]
-//        print(dates[0])
-
-//        emojis = ["☺️👍🏼💕💤", "🍲💁🏻💅🎵🌟🎉🍹🌆", "💩😢💔", "👌🏼🌸🍃🍀", "😴😴😴", "☔️", "🍎🏃🏻🚲"]
-//        print(emojis[0])
-        
-        
+    
         periods = ["This Week", "Last Week", "Nov 1-7", "Oct 25-31"]
         print(periods[0])
-        
-        
-        
-        
         
         // Tag Cloud Generator Cocoapod
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
@@ -110,11 +79,11 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
                 self.emojis = objects
                 
                 for (index, element) in self.emojis.enumerate() {
-                    print("Item \(index): \(element)")
+                    //print("Item \(index): \(element)")
                     let text = element["text"] as? String
                     if text != nil {
                         for character in text!.characters {
-                            print(character)
+                            //print(character)
                             let count = tagDict["\(character)"]
                             if count != nil {
                                 tagDict["\(character)"] = count! + 1
@@ -149,6 +118,8 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         
         
         
+        
+        
 //        dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //            // This runs in a background thread
 //            
@@ -177,6 +148,12 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 //            });
     
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.reloadMessages()
+
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -184,9 +161,9 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     }
 
     func reloadMessages() {
-        print("reloading")
+        //print("reloading")
         let query = PFQuery(className: "Message")
-        query.orderByAscending("createdAt")
+        query.orderByDescending("createdAt")
         // query.limit = 25
     
         let userEmail = PFUser.currentUser()?.email
