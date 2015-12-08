@@ -10,8 +10,11 @@
 		0B0B3329A3FD064A3D5D2B86 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CD98A176FAFAECD087F4BE3 /* Pods.framework */; };
 		1428C9011C1161BC006CBDF6 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1428C9001C1161BC006CBDF6 /* NewViewController.swift */; };
 		142B3F1C1C11796600F335C4 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142B3F1B1C11796600F335C4 /* SettingsCell.swift */; };
+		1454FAD01C16444700F655FC /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1454FACF1C16444700F655FC /* AboutViewController.swift */; };
 		1458FB831BFD4F66008DF1AE /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1458FB821BFD4F66008DF1AE /* TimelineViewController.swift */; };
 		14CDC3451C1177FD00F574BD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CDC3441C1177FD00F574BD /* SettingsViewController.swift */; };
+		14D7A65A1C16870D0044AF38 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D7A6591C16870D0044AF38 /* TestViewController.swift */; };
+		14D7A65C1C1687210044AF38 /* TestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D7A65B1C1687210044AF38 /* TestCell.swift */; };
 		14F6381F1BFD63FD00918702 /* MoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F6381E1BFD63FD00918702 /* MoodTableViewCell.swift */; };
 		9178C6C41BFAE96D00F049F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9178C6C31BFAE96D00F049F8 /* AppDelegate.swift */; };
 		9178C6C61BFAE96D00F049F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9178C6C51BFAE96D00F049F8 /* ViewController.swift */; };
@@ -59,8 +62,11 @@
 		0CD98A176FAFAECD087F4BE3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1428C9001C1161BC006CBDF6 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		142B3F1B1C11796600F335C4 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		1454FACF1C16444700F655FC /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		1458FB821BFD4F66008DF1AE /* TimelineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
-		14CDC3441C1177FD00F574BD /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		14CDC3441C1177FD00F574BD /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ../SettingsViewController.swift; sourceTree = "<group>"; };
+		14D7A6591C16870D0044AF38 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		14D7A65B1C1687210044AF38 /* TestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCell.swift; sourceTree = "<group>"; };
 		14F6381E1BFD63FD00918702 /* MoodTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoodTableViewCell.swift; path = ../MoodTableViewCell.swift; sourceTree = "<group>"; };
 		210438B01C0537943A7356D1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		9178C6C01BFAE96D00F049F8 /* Moodrn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Moodrn.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,7 +143,6 @@
 		9178C6B71BFAE96D00F049F8 = {
 			isa = PBXGroup;
 			children = (
-				14CDC3441C1177FD00F574BD /* SettingsViewController.swift */,
 				9178C6F91BFAEE5800F049F8 /* FBSDKCoreKit.framework */,
 				9178C6FA1BFAEE5800F049F8 /* FBSDKLoginKit.framework */,
 				9178C6C21BFAE96D00F049F8 /* Moodrn */,
@@ -163,6 +168,8 @@
 		9178C6C21BFAE96D00F049F8 /* Moodrn */ = {
 			isa = PBXGroup;
 			children = (
+				14CDC3441C1177FD00F574BD /* SettingsViewController.swift */,
+				1454FACF1C16444700F655FC /* AboutViewController.swift */,
 				14F6381E1BFD63FD00918702 /* MoodTableViewCell.swift */,
 				9178C6C31BFAE96D00F049F8 /* AppDelegate.swift */,
 				9178C6C51BFAE96D00F049F8 /* ViewController.swift */,
@@ -172,6 +179,9 @@
 				142B3F1B1C11796600F335C4 /* SettingsCell.swift */,
 				1458FB821BFD4F66008DF1AE /* TimelineViewController.swift */,
 				9178C6CC1BFAE96D00F049F8 /* LaunchScreen.storyboard */,
+				9178C6C71BFAE96D00F049F8 /* Main.storyboard */,
+				14D7A6591C16870D0044AF38 /* TestViewController.swift */,
+				14D7A65B1C1687210044AF38 /* TestCell.swift */,
 				9178C6CF1BFAE96D00F049F8 /* Info.plist */,
 				C88EBDAC1C0297B500F7D8B3 /* MessageViewController.swift */,
 				91C3C9F21C15473200E31D83 /* ComposerViewController.swift */,
@@ -421,6 +431,8 @@
 			files = (
 				C82CC7D41BFD509B0059389A /* LoginViewController.swift in Sources */,
 				14F6381F1BFD63FD00918702 /* MoodTableViewCell.swift in Sources */,
+				14D7A65A1C16870D0044AF38 /* TestViewController.swift in Sources */,
+				1454FAD01C16444700F655FC /* AboutViewController.swift in Sources */,
 				142B3F1C1C11796600F335C4 /* SettingsCell.swift in Sources */,
 				9178C6C61BFAE96D00F049F8 /* ViewController.swift in Sources */,
 				C88EBDAD1C0297B500F7D8B3 /* MessageViewController.swift in Sources */,
@@ -429,6 +441,7 @@
 				1428C9011C1161BC006CBDF6 /* NewViewController.swift in Sources */,
 				1458FB831BFD4F66008DF1AE /* TimelineViewController.swift in Sources */,
 				14CDC3451C1177FD00F574BD /* SettingsViewController.swift in Sources */,
+				14D7A65C1C1687210044AF38 /* TestCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

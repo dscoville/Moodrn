@@ -63,8 +63,6 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
             
         }
         
-        // set Settings button to FB profile picture
-        settingsButton.setImage(UIImage(named: "settings.png")!, forState: .Normal)
         
         
         

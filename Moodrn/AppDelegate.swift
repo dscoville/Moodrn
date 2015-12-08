@@ -15,19 +15,16 @@ import ParseFacebookUtilsV4
 @UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    let replyActionString = "REPLY_ACTION"
-    let openActionString = "OPEN_ACTION"
+    var storyboard : UIStoryboard?;
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Parse.setApplicationId("jhfxDUb6bVv70p0I22v5GBG3py7Xoxvxucf6NKzW", clientKey:"yzChRhrKqEkQ9NTsPYvJqx7C02PgDMP3yWNvCSj1")
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
         
-        // The below nested if-statement simply checks if the app was launched because of a notification, and if so, we call our didReceiveRemoteNotification function.
-        if let launchOptions = launchOptions as? [String : AnyObject] {
-            if let notificationDictionary = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey] as? [NSObject : AnyObject] {
-                self.application(application, didReceiveRemoteNotification: notificationDictionary)
-            }
+        self.storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle());
+        var currentUser = PFUser.currentUser()
+        if currentUser != nil {
+            self.window?.rootViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TimelineNavigationController");
         }
         
         return true
