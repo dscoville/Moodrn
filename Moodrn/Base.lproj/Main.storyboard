@@ -245,6 +245,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <segue destination="e5K-7d-LP6" kind="push" identifier="timelineSegue" id="W6K-ns-AdX"/>
+                        <segue destination="K1a-Gg-wuI" kind="push" identifier="firstComposerSegue" id="Pa3-MV-s6Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0oM-Be-Y7F" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -293,6 +294,7 @@
         <scene sceneID="7qo-jn-v3D">
             <objects>
                 <navigationController storyboardIdentifier="TimelineNavigationController" navigationBarHidden="YES" id="zGk-OL-jSG" customClass="TimelineNavigationController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="3vX-jK-xBS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lTj-2W-d2Y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -348,7 +350,7 @@
                                         <rect key="frame" x="0.0" y="272" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AHP-XI-TfR" id="EAb-6O-qX3">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22/22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3iF-3W-T0Y" userLabel="Date">
@@ -462,7 +464,7 @@
                                         <rect key="frame" x="0.0" y="1" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fhf-e4-ntR" id="1E1-Pc-4Ua">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="88"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="87.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5db-PI-URw">
@@ -636,7 +638,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ozF-hU-Xt6" id="1Be-Vy-z80">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iNc-Sf-YDn">
@@ -6468,6 +6470,7 @@
                         <outlet property="questionLabel" destination="akb-o7-hRl" id="XnH-Cb-qzx"/>
                         <outlet property="smiley" destination="yGi-85-hjK" id="0gt-kI-byl"/>
                         <outlet property="textField" destination="g1V-Qt-Dbm" id="rfA-Yz-hgp"/>
+                        <segue destination="e5K-7d-LP6" kind="push" identifier="composerToTimelineSegue" id="uxT-Cx-xZm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LnY-Q3-i0N" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -6506,6 +6509,7 @@
         <image name="x" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gps-mt-A2t"/>
+        <segue reference="uxT-Cx-xZm"/>
+        <segue reference="Pa3-MV-s6Y"/>
     </inferredMetricsTieBreakers>
 </document>

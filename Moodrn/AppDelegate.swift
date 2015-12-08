@@ -27,6 +27,13 @@ import ParseFacebookUtilsV4
             self.window?.rootViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TimelineNavigationController");
         }
         
+        // The below nested if-statement simply checks if the app was launched because of a notification, and if so, we call our didReceiveRemoteNotification function.
+        if let launchOptions = launchOptions as? [String : AnyObject] {
+            if let notificationDictionary = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey] as? [NSObject : AnyObject] {
+                self.application(application, didReceiveRemoteNotification: notificationDictionary)
+            }
+        }
+        
         return true
     }
     
@@ -65,20 +72,53 @@ import ParseFacebookUtilsV4
     
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [NSObject : AnyObject], withResponseInfo responseInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
         
-        let reply = responseInfo[UIUserNotificationActionResponseTypedTextKey]
-        
-        let message = PFObject(className: "Message")
-        
-        message["text"] = reply
-        
-        let userEmail = PFUser.currentUser()?.email
-        message["username"] = userEmail
-        message.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            print("they replied with \(reply)")
+        if identifier == "REPLY_ACTION"{
+            print("it was a REPLY_ACTION")
+            print("\(responseInfo[UIUserNotificationActionResponseTypedTextKey])")
+            if let response = responseInfo[UIUserNotificationActionResponseTypedTextKey], let responseText = response as? String {
+                    NSLog(responseText)
+                    let message = PFObject(className: "Message")
+                    
+                    message["text"] = responseText
+                    
+                    let userEmail = PFUser.currentUser()?.email
+                    message["username"] = userEmail
+                    print("message value \(message)")
+                    print("userEmail value \(userEmail)")
+                    
+                    message.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+                        print("they replied with \(responseText)")
+                    }
+            }
         }
-
         completionHandler()
     }
+    
+        
+        
+        
+        
+        
+        
+        
+        //let reply = responseInfo[UIUserNotificationActionResponseTypedTextKey] as? String
+        
+        //let message = PFObject(className: "Message")
+        
+        //message["text"] = reply
+        
+        //let userEmail = PFUser.currentUser()?.email
+        //message["username"] = userEmail
+        //print("reply value \(reply)")
+        //print("message value \(message)")
+        //print("userEmail value \(userEmail)")
+        
+        //message.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+       //     print("they replied with \(reply)")
+       // }
+
+        //completionHandler()
+    //}
    
     //func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification notification: UIUserNotificationType, withResponseInfo responseInfo: [NSObject : AnyObject?], completionHandler: () -> Void) {
         

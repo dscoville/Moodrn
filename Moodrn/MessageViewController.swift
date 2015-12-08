@@ -91,8 +91,8 @@ class MessageViewController: UIViewController {
         replyAction.identifier = "REPLY_ACTION"
         replyAction.destructive = false
         replyAction.title = "Reply"
-        replyAction.activationMode = .Foreground
-        replyAction.authenticationRequired = true
+        replyAction.activationMode = .Background
+        replyAction.authenticationRequired = false
         // make the notification have a text box
         replyAction.behavior = .TextInput
         
@@ -139,7 +139,7 @@ class MessageViewController: UIViewController {
         
         print("Successfully subscribed to \(subscribedChannels)")
         
-        performSegueWithIdentifier("timelineSegue", sender: nil)
+        performSegueWithIdentifier("firstComposerSegue", sender: nil)
         
     }
     
@@ -154,7 +154,7 @@ class MessageViewController: UIViewController {
         currentInstallation.saveInBackground()
         print("Successfully subscribed to \(currentInstallation.channels)")
         
-        performSegueWithIdentifier("timelineSegue", sender: nil)
+        performSegueWithIdentifier("firstComposerSegue", sender: nil)
     }
     
     @IBAction func didTapEveningButton(sender: AnyObject) {
@@ -169,7 +169,7 @@ class MessageViewController: UIViewController {
         
         print("Successfully subscribed to \(currentInstallation.channels)")
         
-        performSegueWithIdentifier("timelineSegue", sender: nil)
+        performSegueWithIdentifier("firstComposerSegue", sender: nil)
     }
     
 

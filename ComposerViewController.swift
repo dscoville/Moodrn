@@ -60,8 +60,8 @@ class ComposerViewController: UIViewController {
         let userEmail = PFUser.currentUser()?.email
         message["username"] = userEmail
         message.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            self.navigationController?.popViewControllerAnimated(true)
-
+            //self.navigationController?.popViewControllerAnimated(true)
+            self.performSegueWithIdentifier("composerToTimelineSegue", sender: self)
             //print("sent")
         }
                 //self.performSegueWithIdentifier("backToTimeline", sender: self)
