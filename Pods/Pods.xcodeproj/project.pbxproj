@@ -57,7 +57,6 @@
 		139129FB2753CCE839E40B3F89870D3F /* FBSDKLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = D4EB2AFA7ABC5A473C7E05FB4D300BA7 /* FBSDKLogger.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		13AF636A0C8A92E62522BAA19CE5C15D /* FBSDKLoginCompletion.h in Headers */ = {isa = PBXBuildFile; fileRef = 437C8F6E2864450161340197BA24DF4B /* FBSDKLoginCompletion.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		13F0475F0B6AC0562674C5D2776BDD4A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB06AE74EC90E46A60DBA3418A0CB4D0 /* CoreLocation.framework */; };
-		1454FAD41C164DBB00F655FC /* NotificationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1454FAD31C164DBB00F655FC /* NotificationsCell.swift */; };
 		15028369186C1FA07E92A2C523793346 /* Parse_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 61E91CF8781AC75A04572F2E52D9465A /* Parse_Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		1506ABD5E6E321807F63BC4AB8D02476 /* PFHash.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B5AF2CB75C2FEEAA79E9D8D49BD29C /* PFHash.m */; };
 		154BB6D1F453AA2E1014835259BA3B34 /* FBSDKGraphRequestPiggybackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E06F17339099C3BC83C32FA204AE6C07 /* FBSDKGraphRequestPiggybackManager.m */; };
@@ -779,7 +778,6 @@
 		130BE675DA8257E0073FC83205F144DD /* PFMutableRelationState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PFMutableRelationState.m; path = Parse/Internal/Relation/State/PFMutableRelationState.m; sourceTree = "<group>"; };
 		1321F07B4FFFB4ABDDBACE4FB358F98E /* PFRESTQueryCommand.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PFRESTQueryCommand.h; path = Parse/Internal/Commands/PFRESTQueryCommand.h; sourceTree = "<group>"; };
 		13BEB7F20C1EAC536FF42F86B9E98E6B /* FBSDKCoreKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FBSDKCoreKit.modulemap; sourceTree = "<group>"; };
-		1454FAD31C164DBB00F655FC /* NotificationsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationsCell.swift; path = ../Moodrn/NotificationsCell.swift; sourceTree = "<group>"; };
 		14CEE87238358F70E19917795277BC5F /* FBSDKGraphRequestPiggybackManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSDKGraphRequestPiggybackManager.h; path = FBSDKCoreKit/FBSDKCoreKit/Internal/Network/FBSDKGraphRequestPiggybackManager.h; sourceTree = "<group>"; };
 		14EBD3E09F398315D7655929CF7B1199 /* ParseManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ParseManager.m; path = Parse/Internal/ParseManager.m; sourceTree = "<group>"; };
 		1506094C03E5177A2048EA705A27992E /* HPLTagCloudGenerator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HPLTagCloudGenerator.m; sourceTree = "<group>"; };
@@ -2139,7 +2137,6 @@
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
-				1454FAD31C164DBB00F655FC /* NotificationsCell.swift */,
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				02465315C862F1060DF561DA991DC0F5 /* Frameworks */,
 				FF70FAB542D4CB3D210E1B074F6B6B02 /* Pods */,
@@ -2916,7 +2913,6 @@
 				EA226C5AE494F9760237B862404A4C4E /* BFCancellationTokenSource.m in Sources */,
 				2C0BA14EF8B5B25F3C7191BD6B1B2795 /* BFExecutor.m in Sources */,
 				4F93D425A57A6FBEFD7323AF36177E19 /* BFMeasurementEvent.m in Sources */,
-				1454FAD41C164DBB00F655FC /* NotificationsCell.swift in Sources */,
 				2FFFE3903CA60F7C8F37ED6C6614BC2F /* BFTask.m in Sources */,
 				9F009FE9D713276DFC1502518A6B6DCF /* BFTaskCompletionSource.m in Sources */,
 				E99104F6F567E7E2A2AD03CA43214488 /* BFURL.m in Sources */,

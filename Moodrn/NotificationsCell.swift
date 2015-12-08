@@ -1,20 +1,15 @@
 //
 //  NotificationsCell.swift
-//  Pods
+//  Moodrn
 //
 //  Created by Valerie Chao on 12/7/15.
-//
+//  Copyright © 2015 David Scoville. All rights reserved.
 //
 
 import UIKit
 
 class NotificationsCell: UITableViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel!
-    
-    
-    @IBOutlet weak var subtitleLabel: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
