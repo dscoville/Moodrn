@@ -1,5 +1,5 @@
 //
-//  NotificationsCell.swift
+//  TestCell.swift
 //  Moodrn
 //
 //  Created by Valerie Chao on 12/7/15.
@@ -8,8 +8,10 @@
 
 import UIKit
 
-class NotificationsCell: UITableViewCell {
+class TestCell: UITableViewCell {
 
+    @IBOutlet weak var testLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

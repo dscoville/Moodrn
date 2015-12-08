@@ -1,5 +1,5 @@
 //
-//  NotificationSettingsViewController.swift
+//  NotifViewController.swift
 //  Moodrn
 //
 //  Created by Valerie Chao on 12/7/15.
@@ -8,16 +8,8 @@
 
 import UIKit
 
-class NotificationSettingsViewController: UIViewController {
+class NotifViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
-    
-    var objects = [
-        ["title" : "Daily", "subtitle" : "Get notified once a day"],
-        ["title" : "Weekly", "subtitle" : "Get notified once a week"],
-        ["title" : "Monthly", "subtitle" : "Get notified once a month"]]
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,9 +22,6 @@ class NotificationSettingsViewController: UIViewController {
     }
     
 
-    @IBAction func didPressBack(sender: AnyObject) {
-        navigationController!.popViewControllerAnimated(true)
-    }
     /*
     // MARK: - Navigation
 
