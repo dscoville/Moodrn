@@ -24,6 +24,7 @@ class LoginViewController: UIViewController {
     var farEmojiOriginalCenter: CGPoint!
     var midEmojiOriginalCenter: CGPoint!
     var closeEmojiOriginalCenter: CGPoint!
+    let subscribedChannels = PFInstallation.currentInstallation().channels
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,14 +65,25 @@ class LoginViewController: UIViewController {
             (user: PFUser?, error: NSError?) -> Void in
             if let user = user {
                 if user.isNew {
+                    
+                    //new user signup
                     print("User signed up and logged in through Facebook!")
                     self.performSegueWithIdentifier("loginSegue", sender: self)
                     
                 } else {
                     print("User logged in through Facebook!")
                     self.animateEmojiWallpaper()
+                    if self.subscribedChannels == nil{
+                        self.performSegueWithIdentifier("loginSegue", sender: self)
+                        print("\(self.subscribedChannels)")
+                    } else{
+                        self.performSegueWithIdentifier("timelineSegue", sender: self)
+                        print("\(self.subscribedChannels)")
+                    }
+                    
+                    
                     //trying just using segues
-                    self.performSegueWithIdentifier("loginSegue", sender: self)
+                    
                     
                     //let protectedPage = self.storyboard?.instantiateViewControllerWithIdentifier("MessageViewController") as! MessageViewController
                     
@@ -80,7 +92,7 @@ class LoginViewController: UIViewController {
                     //appDelegate.window?.rootViewController = protectedPageNav
                 }
             } else {
-                print("Uh oh. The user cancelled the Facebook login.")
+                print("user cancelled fb login")
                 self.animateEmojiWallpaper()
             }
         }
