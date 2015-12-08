@@ -18,7 +18,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     var objects = [
         ["title" : "Notifications", "subtitle" : "Choose when you get notifications"],
         ["title" : "About", "subtitle" : "Learn more about Moodrn"],
-        ["title" : "Log Out", "subtitle" : "Logged in as Valerie"]]
+        ["title" : "Log Out", "subtitle" : "Log out of Moodrn"]]
     
 
     override func viewDidLoad() {
@@ -109,7 +109,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
 
         if row == 0 {
             print("Notifications")
-            self.performSegueWithIdentifier("notificationsSegue", sender: self)
+            self.performSegueWithIdentifier("testSegue", sender: self)
         } else if row == 1 {
             print("About")
             self.performSegueWithIdentifier("aboutSegue", sender: self)

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="zGk-OL-jSG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="6Wq-Z4-jGg">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -351,7 +351,6 @@
                                             <segue destination="s9v-N3-2ks" kind="push" id="5yP-xV-pk2"/>
                                         </connections>
                                     </button>
-
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
@@ -462,7 +461,7 @@
                     <connections>
                         <outlet property="tableView" destination="h0K-nl-Ifs" id="5FI-SM-H0e"/>
                         <segue destination="o6X-c9-tza" kind="push" identifier="aboutSegue" id="4vW-nD-Wh6"/>
-                        <segue destination="pIw-Uo-mHV" kind="push" identifier="notificationsSegue" id="H90-tP-e4M"/>
+                        <segue destination="0sD-2O-MjM" kind="push" identifier="testSegue" id="9OH-yZ-1r9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MXg-6B-CaM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -495,7 +494,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xp2-pm-svo">
-                                <rect key="frame" x="16" y="81" width="340" height="66"/>
+                                <rect key="frame" x="16" y="56" width="340" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">This app was created by David Scoville, Nathan Garvie, and Valerie Chao in December 2015. This is our first app. We hope you enjoy it!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -512,63 +511,71 @@
             </objects>
             <point key="canvasLocation" x="2216.5" y="-2007.5"/>
         </scene>
-        <!--Notification Settings View Controller-->
-        <scene sceneID="EsJ-hZ-gj0">
+        <!--Test View Controller-->
+        <scene sceneID="Gb2-hv-OeN">
             <objects>
-                <viewController id="pIw-Uo-mHV" customClass="NotificationSettingsViewController" customModule="Moodrn" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rOW-2g-Hwj">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CNb-0J-lIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="0sD-2O-MjM" customClass="TestViewController" customModule="Moodrn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FVZ-UH-yRN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Oe7-hv-qr1">
-                                <rect key="frame" x="87" y="27" width="201" height="21"/>
+                            <view contentMode="scaleToFill" id="TTl-Nw-XV9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6w5-BX-Y7M">
-                                <rect key="frame" x="14" y="23" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didPressBack:" destination="pIw-Uo-mHV" eventType="touchUpInside" id="NLv-Xu-Igx"/>
-                                </connections>
-                            </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="oyk-fq-ySO">
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ufE-Fw-lE0">
+                                        <rect key="frame" x="16" y="28" width="34" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Back">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressBack:" destination="0sD-2O-MjM" eventType="touchUpInside" id="XYW-5S-cPo"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jUu-nq-B6K">
+                                        <rect key="frame" x="80" y="28" width="214" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.37647058820000001" green="0.0" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" id="gTs-6Q-rDo">
                                 <rect key="frame" x="0.0" y="61" width="375" height="606"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.37647058820000001" green="0.0" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="umk-ol-A52">
+                                    <rect key="frame" x="0.0" y="116" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.37647058820000001" green="0.0" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationsCell" editingAccessoryType="checkmark" rowHeight="88" id="Uih-Az-V34" customClass="NotificationsCell" customModule="Bolts">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TestCell" rowHeight="88" id="ozF-hU-Xt6" customClass="TestCell" customModule="Moodrn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uih-Az-V34" id="eMR-Gd-Cc6">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ozF-hU-Xt6" id="1Be-Vy-z80">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yR6-oA-XK5">
-                                                    <rect key="frame" x="16" y="37" width="59" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="D1F-72-mOC">
-                                                    <rect key="frame" x="16" y="8" width="34" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iNc-Sf-YDn">
+                                                    <rect key="frame" x="16" y="33" width="248" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.37647058820000001" green="0.0" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.37647058820000001" green="0.0" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
-                                            <outlet property="subtitleLabel" destination="yR6-oA-XK5" id="SHO-No-I69"/>
-                                            <outlet property="titleLabel" destination="D1F-72-mOC" id="rOd-5j-3CH"/>
+                                            <outlet property="testLabel" destination="iNc-Sf-YDn" id="HS5-hD-OPX"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -576,14 +583,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.37647058820000001" green="0.0" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ajL-sd-GAw"/>
+                    <navigationItem key="navigationItem" id="4LH-Cv-h1F"/>
                     <connections>
-                        <outlet property="tableView" destination="oyk-fq-ySO" id="k4E-i8-2lD"/>
+                        <outlet property="tableView" destination="gTs-6Q-rDo" id="qQ4-rf-G8P"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LJ1-Qp-oYl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2216.5" y="-2740.5"/>
+            <point key="canvasLocation" x="1586.5" y="-2775.5"/>
         </scene>
         <!--Composer View Controller-->
         <scene sceneID="j0e-WY-ZMP">
@@ -605,7 +611,6 @@
                                                 <rect key="frame" x="11" y="20" width="42" height="42"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <animations/>
-
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                 <state key="normal" title="😀"/>
@@ -6325,7 +6330,6 @@
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" red="0.72817436984066231" green="0.97162614305489292" blue="1" alpha="0.49939051418439717" colorSpace="calibratedRGB"/>
-
                                     </view>
                                 </subviews>
                                 <animations/>
@@ -6420,6 +6424,7 @@
         <image name="x" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="5yP-xV-pk2"/>
         <segue reference="11f-yj-JaI"/>
     </inferredMetricsTieBreakers>
 </document>

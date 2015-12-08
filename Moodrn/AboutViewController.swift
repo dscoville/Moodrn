@@ -12,6 +12,8 @@ class AboutViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
 
         // Do any additional setup after loading the view.
     }
