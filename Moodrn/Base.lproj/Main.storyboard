@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="6Wq-Z4-jGg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="e5K-7d-LP6">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -348,7 +348,7 @@
                                         <animations/>
                                         <state key="normal" image="settings"/>
                                         <connections>
-                                            <segue destination="s9v-N3-2ks" kind="push" id="5yP-xV-pk2"/>
+                                            <segue destination="6Wq-Z4-jGg" kind="modal" id="pxN-2m-vu4"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -514,7 +514,6 @@
         <!--Test View Controller-->
         <scene sceneID="Gb2-hv-OeN">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CNb-0J-lIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="0sD-2O-MjM" customClass="TestViewController" customModule="Moodrn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FVZ-UH-yRN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -588,6 +587,7 @@
                         <outlet property="tableView" destination="gTs-6Q-rDo" id="qQ4-rf-G8P"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CNb-0J-lIp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1586.5" y="-2775.5"/>
         </scene>
@@ -6391,7 +6391,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LnY-Q3-i0N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1545.5" y="-1179.5"/>
+            <point key="canvasLocation" x="1857" y="-427.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GFb-BG-3ql">
@@ -6424,7 +6424,6 @@
         <image name="x" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5yP-xV-pk2"/>
         <segue reference="11f-yj-JaI"/>
     </inferredMetricsTieBreakers>
 </document>
