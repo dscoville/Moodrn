@@ -94,16 +94,18 @@ class MessageViewController: UIViewController {
     }
     
     @IBAction func didTapMorningButton(sender: AnyObject) {
-        //request notification permission
         
+        // crete reply notifications action
         let replyAction = UIMutableUserNotificationAction()
         replyAction.identifier = "TEXT_ACTION"
         replyAction.destructive = false
         replyAction.title = "Reply"
         replyAction.activationMode = .Background
         replyAction.authenticationRequired = false
+        // make the notification have a text box
         replyAction.behavior = .TextInput
         
+        // define notification categories
         let category = UIMutableUserNotificationCategory()
         category.identifier = "HOWAREYOUFEELING"
         category.setActions([replyAction], forContext: .Default)
@@ -111,7 +113,7 @@ class MessageViewController: UIViewController {
         
         let categories = NSSet(object: category) as! Set<UIUserNotificationCategory>
         
-
+        // request notification permissions
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: categories)
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
         UIApplication.sharedApplication().registerForRemoteNotifications()
@@ -120,43 +122,39 @@ class MessageViewController: UIViewController {
         let currentInstallation = PFInstallation.currentInstallation()
         let subscribedChannels = PFInstallation.currentInstallation().channels
      
+        // remove any other channels subscribed to
         currentInstallation.channels = []
         currentInstallation.saveInBackground()
-
         
-        //    currentInstallation.removeObject("Evening", forKey: "channels")
-        //    currentInstallation.saveInBackground()
-        //}
-        
+        //suscribe to notification channel
         currentInstallation.addUniqueObject("Morning", forKey: "channels")
         currentInstallation.saveInBackground()
-
+        
         print("Successfully subscribed to \(subscribedChannels)")
-        
-        //let channels = [ "Morning" ];
-        //let push = PFPush()
-        //let data = [
-        //    "alert" : "it's morning time the early time",
-        //    "badge" : "Increment"
-        //]
-        
-        // Be sure to use the plural 'setChannels'.
-       // push.setChannels(channels)
-       // push.setData(data)
-       // push.sendPushInBackground()
-        
-        //save channels to parse user
-        
-        //myUser.setObject(userFirstName!, forKey: "first_name")
-        //currentInstallation.setObject(channels, forKey: "channels")
-        //currentInstallation.channels = PFUser.currentUser()
-        //currentInstallation.saveInBackground()
         
         performSegueWithIdentifier("timelineSegue", sender: nil)
         
     }
     
     @IBAction func didTapAfternoonButton(sender: AnyObject) {
+        // crete reply notifications action
+        let replyAction = UIMutableUserNotificationAction()
+        replyAction.identifier = "TEXT_ACTION"
+        replyAction.destructive = false
+        replyAction.title = "Reply"
+        replyAction.activationMode = .Background
+        replyAction.authenticationRequired = false
+        // make the notification have a text box
+        replyAction.behavior = .TextInput
+        
+        // define notification categories
+        let category = UIMutableUserNotificationCategory()
+        category.identifier = "HOWAREYOUFEELING"
+        category.setActions([replyAction], forContext: .Default)
+        category.setActions([replyAction], forContext: .Minimal)
+        
+        let categories = NSSet(object: category) as! Set<UIUserNotificationCategory>
+        
         //request notification permission
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
@@ -175,6 +173,24 @@ class MessageViewController: UIViewController {
     }
     
     @IBAction func didTapEveningButton(sender: AnyObject) {
+        // crete reply notifications action
+        let replyAction = UIMutableUserNotificationAction()
+        replyAction.identifier = "TEXT_ACTION"
+        replyAction.destructive = false
+        replyAction.title = "Reply"
+        replyAction.activationMode = .Background
+        replyAction.authenticationRequired = false
+        // make the notification have a text box
+        replyAction.behavior = .TextInput
+        
+        // define notification categories
+        let category = UIMutableUserNotificationCategory()
+        category.identifier = "HOWAREYOUFEELING"
+        category.setActions([replyAction], forContext: .Default)
+        category.setActions([replyAction], forContext: .Minimal)
+        
+        let categories = NSSet(object: category) as! Set<UIUserNotificationCategory>
+        
         //request notification permission
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
