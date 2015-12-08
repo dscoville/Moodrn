@@ -15,10 +15,18 @@ import ParseFacebookUtilsV4
 @UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var storyboard : UIStoryboard?;
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Parse.setApplicationId("jhfxDUb6bVv70p0I22v5GBG3py7Xoxvxucf6NKzW", clientKey:"yzChRhrKqEkQ9NTsPYvJqx7C02PgDMP3yWNvCSj1")
         PFFacebookUtils.initializeFacebookWithApplicationLaunchOptions(launchOptions)
+        
+        self.storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle());
+        var currentUser = PFUser.currentUser()
+        if currentUser != nil {
+            self.window?.rootViewController = self.storyboard?.instantiateViewControllerWithIdentifier("TimelineNavigationController");
+        }
+        
         return true
     }
     func application(application: UIApplication,
