@@ -36,6 +36,9 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // reload messages every 2 seconds
+        // var reloadTimer = NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector:  "reloadMessages()", userInfo: nil, repeats: false)
+        
         //initialize variable you're using api with, as an empty array
         emojis = []
         dates = []
@@ -233,14 +236,13 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         self.reloadMessages()
     }
     
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     func reloadMessages() {
-        //print("reloading")
+        print("reloading")
         let query = PFQuery(className: "Message")
         query.orderByDescending("createdAt")
         // query.limit = 25

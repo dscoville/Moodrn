@@ -15,6 +15,9 @@ import ParseFacebookUtilsV4
 @UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    let replyActionString = "REPLY_ACTION"
+    let openActionString = "OPEN_ACTION"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Parse.setApplicationId("jhfxDUb6bVv70p0I22v5GBG3py7Xoxvxucf6NKzW", clientKey:"yzChRhrKqEkQ9NTsPYvJqx7C02PgDMP3yWNvCSj1")
@@ -76,6 +79,7 @@ import ParseFacebookUtilsV4
         message.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
             print("they replied with \(reply)")
         }
+
         completionHandler()
     }
    
