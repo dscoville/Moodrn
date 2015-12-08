@@ -85,23 +85,14 @@ class MessageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func didTapSignOutButton(sender: AnyObject) {
-        
-        PFUser.logOutInBackgroundWithBlock { (error: NSError?) -> Void in
-            
-            self.dismissViewControllerAnimated(true, completion: nil)
-        }
-    }
-    
-    @IBAction func didTapMorningButton(sender: AnyObject) {
-        
+    func setupNotifications(){
         // crete reply notifications action
         let replyAction = UIMutableUserNotificationAction()
-        replyAction.identifier = "TEXT_ACTION"
+        replyAction.identifier = "REPLY_ACTION"
         replyAction.destructive = false
         replyAction.title = "Reply"
-        replyAction.activationMode = .Background
-        replyAction.authenticationRequired = false
+        replyAction.activationMode = .Foreground
+        replyAction.authenticationRequired = true
         // make the notification have a text box
         replyAction.behavior = .TextInput
         
@@ -117,14 +108,30 @@ class MessageViewController: UIViewController {
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: categories)
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
         UIApplication.sharedApplication().registerForRemoteNotifications()
+    }
+    
+    func unsubscribeAllNotificationChannels(){
+        let currentInstallation = PFInstallation.currentInstallation()
+        // remove any other channels subscribed to
+        currentInstallation.channels = []
+        currentInstallation.saveInBackground()
+    }
+    
+    @IBAction func didTapSignOutButton(sender: AnyObject) {
+        
+        PFUser.logOutInBackgroundWithBlock { (error: NSError?) -> Void in
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+    }
+    
+    @IBAction func didTapMorningButton(sender: AnyObject) {
+        self.setupNotifications()
+        self.unsubscribeAllNotificationChannels()
         
         // When users indicate they want morning notifications, we subscribe them to that channel.
         let currentInstallation = PFInstallation.currentInstallation()
         let subscribedChannels = PFInstallation.currentInstallation().channels
-     
-        // remove any other channels subscribed to
-        currentInstallation.channels = []
-        currentInstallation.saveInBackground()
         
         //suscribe to notification channel
         currentInstallation.addUniqueObject("Morning", forKey: "channels")
@@ -137,33 +144,11 @@ class MessageViewController: UIViewController {
     }
     
     @IBAction func didTapAfternoonButton(sender: AnyObject) {
-        // crete reply notifications action
-        let replyAction = UIMutableUserNotificationAction()
-        replyAction.identifier = "TEXT_ACTION"
-        replyAction.destructive = false
-        replyAction.title = "Reply"
-        replyAction.activationMode = .Background
-        replyAction.authenticationRequired = false
-        // make the notification have a text box
-        replyAction.behavior = .TextInput
-        
-        // define notification categories
-        let category = UIMutableUserNotificationCategory()
-        category.identifier = "HOWAREYOUFEELING"
-        category.setActions([replyAction], forContext: .Default)
-        category.setActions([replyAction], forContext: .Minimal)
-        
-        let categories = NSSet(object: category) as! Set<UIUserNotificationCategory>
-        
-        //request notification permission
-        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
-        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
-        UIApplication.sharedApplication().registerForRemoteNotifications()
+        self.setupNotifications()
+        self.unsubscribeAllNotificationChannels()
         
         // When users indicate they want afternoon notifications, we subscribe them to that channel.
         let currentInstallation = PFInstallation.currentInstallation()
-        currentInstallation.channels = []
-        currentInstallation.saveInBackground()
 
         currentInstallation.addUniqueObject("Afternoon", forKey: "channels")
         currentInstallation.saveInBackground()
@@ -173,34 +158,11 @@ class MessageViewController: UIViewController {
     }
     
     @IBAction func didTapEveningButton(sender: AnyObject) {
-        // crete reply notifications action
-        let replyAction = UIMutableUserNotificationAction()
-        replyAction.identifier = "TEXT_ACTION"
-        replyAction.destructive = false
-        replyAction.title = "Reply"
-        replyAction.activationMode = .Background
-        replyAction.authenticationRequired = false
-        // make the notification have a text box
-        replyAction.behavior = .TextInput
-        
-        // define notification categories
-        let category = UIMutableUserNotificationCategory()
-        category.identifier = "HOWAREYOUFEELING"
-        category.setActions([replyAction], forContext: .Default)
-        category.setActions([replyAction], forContext: .Minimal)
-        
-        let categories = NSSet(object: category) as! Set<UIUserNotificationCategory>
-        
-        //request notification permission
-        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
-        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
-        UIApplication.sharedApplication().registerForRemoteNotifications()
+        self.setupNotifications()
+        self.unsubscribeAllNotificationChannels()
         
         // When users indicate they want Evening notifications, we subscribe them to that channel.
         let currentInstallation = PFInstallation.currentInstallation()
-        
-        currentInstallation.channels = []
-        currentInstallation.saveInBackground()
         
         currentInstallation.addUniqueObject("Evening", forKey: "channels")
         currentInstallation.saveInBackground()

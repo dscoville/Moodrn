@@ -69,7 +69,7 @@ class LoginViewController: UIViewController {
                     
                 } else {
                     print("User logged in through Facebook!")
-                    
+                    self.animateEmojiWallpaper()
                     //trying just using segues
                     self.performSegueWithIdentifier("loginSegue", sender: self)
                     
@@ -81,6 +81,7 @@ class LoginViewController: UIViewController {
                 }
             } else {
                 print("Uh oh. The user cancelled the Facebook login.")
+                self.animateEmojiWallpaper()
             }
         }
     

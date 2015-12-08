@@ -354,7 +354,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="K1a-Gg-wuI" kind="push" id="7WR-jL-jIs"/>
+                                    <segue destination="K1a-Gg-wuI" kind="push" identifier="composerSegue" id="7WR-jL-jIs"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" id="t7h-7g-kQQ" userLabel="Header">

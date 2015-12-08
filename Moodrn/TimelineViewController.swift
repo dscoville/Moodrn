@@ -229,6 +229,11 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
 
     }
 
+    override func viewWillAppear(animated: Bool) {
+        self.reloadMessages()
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -64,6 +64,7 @@ import ParseFacebookUtilsV4
     }
     
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [NSObject : AnyObject], withResponseInfo responseInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
+        
         let reply = responseInfo[UIUserNotificationActionResponseTypedTextKey]
         
         let message = PFObject(className: "Message")
@@ -73,9 +74,9 @@ import ParseFacebookUtilsV4
         let userEmail = PFUser.currentUser()?.email
         message["username"] = userEmail
         message.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-        
-        print("they replied with \(reply)")
+            print("they replied with \(reply)")
         }
+        completionHandler()
     }
    
     //func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification notification: UIUserNotificationType, withResponseInfo responseInfo: [NSObject : AnyObject?], completionHandler: () -> Void) {
