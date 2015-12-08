@@ -19,7 +19,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         ["title" : "Notifications", "subtitle" : "Choose when you get notifications"],
         ["title" : "About", "subtitle" : "Learn more about Moodrn"],
         ["title" : "Log Out", "subtitle" : "Log out of Moodrn"]]
-    
+    var currentUser = PFUser.currentUser()!.username
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,6 +115,8 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             self.performSegueWithIdentifier("aboutSegue", sender: self)
         } else if row == 2 {
             print("Log out")
+            PFUser.logOut()
+            self.performSegueWithIdentifier("logoutSegue", sender: self)
         } else {
             print ("Not working")
         }
